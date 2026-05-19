@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | About India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .bg-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .lotus {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            opacity: 0.08;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .lotus:nth-child(1) {
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .lotus:nth-child(2) {
+            bottom: -80px;
+            right: -60px;
+            animation-delay: 5s;
+            animation-duration: 25s;
+        }
+
+        .lotus:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            width: 200px;
+            height: 200px;
+            animation-delay: 10s;
+            animation-duration: 30s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(5deg); }
+            66% { transform: translateY(20px) rotate(-5deg); }
+        }
+
+        /* Floating Clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(186, 230, 253, 0.4);
+            border-radius: 100px;
+            animation: drift linear infinite;
+        }
+
+        .cloud::before {
+            content: '';
+            position: absolute;
+            background: rgba(186, 230, 253, 0.4);
+            border-radius: 100px;
+        }
+
+        .cloud1 {
+            width: 120px;
+            height: 40px;
+            top: 20%;
+            left: -150px;
+            animation-duration: 25s;
+        }
+
+        .cloud1::before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 20px;
+        }
+
+        .cloud2 {
+            width: 80px;
+            height: 30px;
+            top: 60%;
+            left: -100px;
+            animation-duration: 35s;
+            animation-delay: 5s;
+        }
+
+        .cloud2::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 15px;
+        }
+
+        .cloud3 {
+            width: 100px;
+            height: 35px;
+            top: 40%;
+            left: -120px;
+            animation-duration: 30s;
+            animation-delay: 15s;
+        }
+
+        .cloud3::before {
+            width: 55px;
+            height: 55px;
+            top: -28px;
+            left: 18px;
+        }
+
+        @keyframes drift {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 200px)); }
+        }
+
+        /* Main Container */
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        /* Ashoka Chakra Spinner */
+        .chakra-container {
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+       .chakra {
+    width: 80px;
+    height: 80px;
+    display: block;
+    animation: spin 10s linear infinite;
+}
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .chakra circle {
+            fill: none;
+            stroke: #0ea5e9;
+            stroke-width: 1.5;
+            opacity: 0.6;
+        }
+
+        .chakra line {
+            stroke: #0ea5e9;
+            stroke-width: 1.5;
+            opacity: 0.6;
+        }
+
+        /* 404 Text */
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #7dd3fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: bounceIn 1s ease-out;
+            letter-spacing: -4px;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-50px);
+            }
+            50% {
+                transform: scale(1.05) translateY(0);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Message */
+        .message {
+            font-size: 1.5rem;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.5s forwards;
+            font-weight: 300;
+        }
+
+        .sub-message {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Decorative Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards;
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #7dd3fc, transparent);
+        }
+
+        .divider-icon {
+            color: #0ea5e9;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Home Button */
+        .home-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1.5s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .home-btn:hover::before {
+            left: 100%;
+        }
+
+        .home-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Peacock Feather Decoration */
+        .feather {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+            animation: featherFloat 15s infinite ease-in-out;
+        }
+
+        .feather:nth-of-type(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        .feather:nth-of-type(2) {
+            top: 70%;
+            left: 85%;
+            animation-delay: 7s;
+            animation-duration: 20s;
+        }
+
+        .feather:nth-of-type(3) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 12s;
+        }
+
+        @keyframes featherFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(0.5);
+            }
+            10% {
+                opacity: 0.15;
+            }
+            50% {
+                opacity: 0.15;
+                transform: translateY(-100px) rotate(180deg) scale(1);
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) rotate(360deg) scale(0.5);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .message {
+                font-size: 1.2rem;
+            }
+            .sub-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration">
+        <!-- Lotus SVGs -->
+        <svg class="lotus" viewBox="0 0 100 100" fill="none">
+            <path d="M50 20 C50 20 30 40 30 60 C30 75 40 85 50 85 C60 85 70 75 70 60 C70 40 50 20 50 20Z" fill="#0ea5e9"/>
+            <path d="M50 20 C50 20 20 35 15 55 C10 70 20 80 30 75 C40 70 50 20 50 20Z" fill="#38bdf8"/>
+            <path d="M50 20 C50 20 80 35 85 55 C90 70 80 80 70 75 C60 70 50 20 50 20Z" fill="#38bdf8"/>
+            <path d="M50 20 C50 20 35 30 25 45 C15 60 25 70 35 65 C45 60 50 20 50 20Z" fill="#7dd3fc"/>
+            <path d="M50 20 C50 20 65 30 75 45 C85 60 75 70 65 65 C55 60 50 20 50 20Z" fill="#7dd3fc"/>
+        </svg>
+        <svg class="lotus" viewBox="0 0 100 100" fill="none">
+            <path d="M50 20 C50 20 30 40 30 60 C30 75 40 85 50 85 C60 85 70 75 70 60 C70 40 50 20 50 20Z" fill="#0ea5e9"/>
+            <path d="M50 20 C50 20 20 35 15 55 C10 70 20 80 30 75 C40 70 50 20 50 20Z" fill="#38bdf8"/>
+            <path d="M50 20 C50 20 80 35 85 55 C90 70 80 80 70 75 C60 70 50 20 50 20Z" fill="#38bdf8"/>
+        </svg>
+        <svg class="lotus" viewBox="0 0 100 100" fill="none">
+            <path d="M50 20 C50 20 30 40 30 60 C30 75 40 85 50 85 C60 85 70 75 70 60 C70 40 50 20 50 20Z" fill="#0ea5e9"/>
+            <path d="M50 20 C50 20 20 35 15 55 C10 70 20 80 30 75 C40 70 50 20 50 20Z" fill="#38bdf8"/>
+            <path d="M50 20 C50 20 80 35 85 55 C90 70 80 80 70 75 C60 70 50 20 50 20Z" fill="#38bdf8"/>
+        </svg>
+
+        <!-- Floating Clouds -->
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+
+        <!-- Floating Peacock Feathers -->
+        <svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1">
+            <path d="M12 2C12 2 4 8 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 8 12 2 12 2Z"/>
+            <circle cx="12" cy="14" r="3"/>
+            <path d="M12 8L12 11"/>
+        </svg>
+        <svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1">
+            <path d="M12 2C12 2 4 8 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 8 12 2 12 2Z"/>
+            <circle cx="12" cy="14" r="3"/>
+        </svg>
+        <svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1">
+            <path d="M12 2C12 2 4 8 4 14C4 18 8 22 12 22C16 22 20 18 20 14C20 8 12 2 12 2Z"/>
+            <circle cx="12" cy="14" r="3"/>
+        </svg>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Animated Ashoka Chakra -->
+       <!-- Animated Ashoka Chakra -->
+<div class="chakra-container">
+    <svg 
+        class="chakra"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 602 602"
+    >
+        <circle cx="301.5" cy="301.5" r="301" fill="#07038d"/>
+        <circle cx="301.5" cy="301.5" r="260.32" fill="#fff"/>
+        <circle cx="301.5" cy="301.5" r="52.06" fill="#07038d"/>
+
+        <!-- spokes -->
+        <g stroke="#07038d" stroke-width="8">
+            <line x1="301.5" y1="41" x2="301.5" y2="561"/>
+            <line x1="41" y1="301.5" x2="561" y2="301.5"/>
+
+            <line x1="117" y1="117" x2="485" y2="485"/>
+            <line x1="485" y1="117" x2="117" y2="485"/>
+
+            <line x1="171" y1="76" x2="431" y2="526"/>
+            <line x1="76" y1="171" x2="526" y2="431"/>
+
+            <line x1="76" y1="431" x2="526" y2="171"/>
+            <line x1="171" y1="526" x2="431" y2="76"/>
+        </g>
+    </svg>
+        </div>
+
+        <h1 class="error-code">404</h1>
+        
+        <p class="message">Page Not Found</p>
+        <p class="sub-message">
+            Looks like you've wandered off the beaten path.<br>
+            This destination isn't on our map of Incredible India.
+        </p>
+
+        <div class="divider">
+            <div class="divider-line"></div>
+            <span class="divider-icon">✻</span>
+            <div class="divider-line"></div>
+        </div>
+
+        <a href="/" class="home-btn">Return to Home</a>
+    </div>
+
+    <script>
+        // Add subtle mouse parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+            
+            const lotusElements = document.querySelectorAll('.lotus');
+            lotusElements.forEach((lotus, index) => {
+                const speed = (index + 1) * 10;
+                lotus.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px)`;
+            });
+        });
+
+        // Add click ripple effect on button
+        document.querySelector('.home-btn').addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255,255,255,0.4);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+            `;
+            
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // Add ripple animation keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

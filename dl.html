@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThunderStudy Delhi — Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700;800&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky: #e4f3fc;
+  --sky-light: #f0f9ff;
+  --sky-mid: #b8ddf5;
+  --sky-deep: #6bb8e8;
+  --sky-vivid: #1e90d6;
+  --azure: #0a6baf;
+  --azure-dark: #064f84;
+  --white: #ffffff;
+  --off-white: #f5faff;
+  --text-dark: #0d2a42;
+  --text-mid: #2a5278;
+  --text-light: #5a8ab0;
+  --accent: #ff6b35;
+  --accent2: #ffd166;
+  --accent3: #06d6a0;
+  --shadow: 0 8px 32px rgba(10,107,175,0.12);
+  --shadow-hover: 0 20px 50px rgba(10,107,175,0.2);
+  --radius: 20px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #eef7fc;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── BG ── */
+.bg-fixed {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(160deg, #d8eef9 0%, #f0f9ff 50%, #daeefa 100%);
+}
+.bg-fixed::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(107,184,232,0.25) 0%, transparent 70%);
+  animation: bgDrift 15s ease-in-out infinite alternate;
+}
+.bg-fixed::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(30,144,214,0.15) 0%, transparent 70%);
+  animation: bgDrift 18s ease-in-out infinite alternate-reverse;
+}
+@keyframes bgDrift { from{transform:translate(0,0)} to{transform:translate(40px,30px)} }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  border-bottom: 1.5px solid rgba(184,221,245,0.7);
+  box-shadow: 0 2px 20px rgba(10,107,175,0.08);
+}
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 64px;
+}
+.nav-brand {
+  font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800;
+  color: var(--azure); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-brand .bolt { color: var(--accent); }
+.nav-cats {
+  display: flex; gap: 4px; list-style: none; flex-wrap: wrap;
+}
+.nav-cats a {
+  font-size: 0.8rem; font-weight: 700; color: var(--text-mid);
+  text-decoration: none; padding: 5px 12px; border-radius: 20px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-cats a:hover, .nav-cats a.active { background: var(--sky-mid); color: var(--azure); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; z-index: 1;
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 420px;
+  align-items: center; gap: 3rem;
+  padding: 4rem 2rem 3rem;
+}
+.hero-left { animation: fadeLeft 0.8s cubic-bezier(.22,1,.36,1) both; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(90deg,#daf0fb,#c2e4f7);
+  border: 1.5px solid var(--sky-deep); border-radius: 30px;
+  padding: 5px 16px; font-size: 0.77rem; font-weight: 800;
+  color: var(--azure); margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 1px;
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  animation: livePulse 1.5s infinite;
+}
+@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900; line-height: 1.07; margin-bottom: 1.1rem;
+  color: var(--text-dark);
+}
+.hero h1 em { font-style: italic; color: var(--sky-vivid); }
+.hero-desc {
+  font-size: 1.05rem; color: var(--text-light); line-height: 1.8;
+  max-width: 520px; margin-bottom: 2rem;
+}
+.hero-stats {
+  display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;
+}
+.hstat { text-align: center; }
+.hstat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-weight: 900; color: var(--sky-vivid);
+}
+.hstat-l { font-size: 0.75rem; color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-p {
+  background: linear-gradient(135deg, var(--sky-vivid), var(--azure));
+  color: #fff; border-radius: 30px; padding: 13px 28px;
+  font-size: 0.92rem; font-weight: 800; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(30,144,214,0.3);
+  transition: transform .2s, box-shadow .2s; display: inline-block;
+}
+.btn-p:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(30,144,214,0.4); }
+.btn-o {
+  border: 2px solid var(--sky-deep); color: var(--azure); border-radius: 30px;
+  padding: 11px 24px; font-size: 0.92rem; font-weight: 800;
+  text-decoration: none; transition: background .2s; display: inline-block;
+}
+.btn-o:hover { background: var(--sky-mid); }
+
+/* MAP */
+.hero-map {
+  animation: fadeRight 0.8s cubic-bezier(.22,1,.36,1) 0.15s both;
+  display: flex; align-items: center; justify-content: center;
+}
+.map-wrap { position: relative; }
+.map-ring {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 380px; height: 380px; border-radius: 50%;
+  border: 2px solid rgba(107,184,232,0.3);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.map-ring2 {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,184,232,0.18), transparent 70%);
+}
+@keyframes ringPulse { 0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4} 50%{transform:translate(-50%,-50%) scale(1.06);opacity:.8} }
+
+.delhi-svg {
+  width: 420px; height: 420px;
+  filter: drop-shadow(0 12px 40px rgba(10,107,175,0.28));
+  animation: svgFloat 5s ease-in-out infinite alternate;
+  position: relative; z-index: 2;
+}
+@keyframes svgFloat { from{transform:translateY(0)} to{transform:translateY(-16px)} }
+
+@keyframes fadeLeft { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeRight { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
+
+/* ── MAIN LAYOUT ── */
+.page-wrap { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+/* ── CHAPTER HEADER ── */
+.chapter {
+  margin-bottom: 4rem; scroll-margin-top: 80px;
+}
+.chapter-banner {
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: 1.6rem 2rem; border-radius: 22px;
+  margin-bottom: 2rem; position: relative; overflow: hidden;
+}
+.chapter-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: inherit; opacity: 0.08; z-index: 0;
+}
+.ch-history { background: linear-gradient(135deg, #1e90d6, #0a6baf); }
+.ch-food    { background: linear-gradient(135deg, #ff6b35, #e84545); }
+.ch-tourist { background: linear-gradient(135deg, #06d6a0, #059b72); }
+.ch-area    { background: linear-gradient(135deg, #845ec2, #5e3a9b); }
+.ch-edu     { background: linear-gradient(135deg, #f9c74f, #e69900); }
+.ch-life    { background: linear-gradient(135deg, #f72585, #c0125f); }
+
+.chapter-banner-icon { font-size: 2.8rem; position: relative; z-index: 1; }
+.chapter-banner-text { position: relative; z-index: 1; }
+.chapter-banner-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900; color: #fff; line-height: 1.1;
+}
+.chapter-banner-text p { color: rgba(255,255,255,0.82); font-size: 0.92rem; margin-top: 4px; }
+
+/* ── TOPIC GRID ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.topic-card {
+  background: rgba(255,255,255,0.88);
+  border: 1.5px solid rgba(184,221,245,0.6);
+  border-radius: 18px; padding: 1.6rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  transition: transform .25s, box-shadow .25s;
+  animation: cardUp .6s both;
+}
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.topic-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900;
+  color: rgba(107,184,232,0.3); line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.topic-card h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.08rem; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 0.7rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.topic-card h3 .ticon { font-size: 1.2rem; }
+.topic-body { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; }
+.topic-body strong { color: var(--azure); font-weight: 700; }
+.topic-tags {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1rem;
+}
+.ttag {
+  background: linear-gradient(90deg,var(--sky),var(--sky-mid));
+  color: var(--azure); border-radius: 20px;
+  padding: 3px 10px; font-size: 0.72rem; font-weight: 700;
+}
+
+/* colour overrides per chapter */
+.ch-food-card .topic-num   { color: rgba(255,107,53,0.25); }
+.ch-food-card .ttag        { background:linear-gradient(90deg,#fff1eb,#ffd5c2); color:#c04000; }
+.ch-tourist-card .topic-num{ color: rgba(6,214,160,0.25); }
+.ch-tourist-card .ttag     { background:linear-gradient(90deg,#e0fff7,#b3f5e6); color:#059b72; }
+.ch-area-card .topic-num   { color: rgba(132,94,194,0.25); }
+.ch-area-card .ttag        { background:linear-gradient(90deg,#f0ebff,#d9c8f5); color:#5e3a9b; }
+.ch-edu-card .topic-num    { color: rgba(249,199,79,0.35); }
+.ch-edu-card .ttag         { background:linear-gradient(90deg,#fffbe0,#ffe599); color:#a07000; }
+.ch-life-card .topic-num   { color: rgba(247,37,133,0.2); }
+.ch-life-card .ttag        { background:linear-gradient(90deg,#ffe8f4,#ffb8de); color:#a00055; }
+
+@keyframes cardUp {
+  from { opacity:0; transform:translateY(25px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── DIVIDER ── */
+.section-div {
+  text-align: center; padding: 2rem 0;
+  color: var(--sky-deep); font-size: 1.5rem; letter-spacing: 8px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: linear-gradient(160deg, var(--azure-dark) 0%, #042d50 100%);
+  color: #fff; padding: 3rem 2rem 1.5rem;
+  position: relative; z-index: 1;
+}
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.footer-brand {
+  font-family: 'Baloo 2', cursive; font-size: 1.6rem; font-weight: 800;
+  margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px;
+}
+.footer-desc { font-size: 0.83rem; opacity: .72; line-height: 1.75; margin-bottom: 1rem; }
+.f-col h4 { font-size: 0.85rem; font-weight: 800; margin-bottom: 0.9rem; opacity: .9; text-transform: uppercase; letter-spacing: .5px; }
+.f-col ul { list-style: none; }
+.f-col ul li { margin-bottom: 7px; }
+.f-col ul li a { color: rgba(255,255,255,.68); font-size: 0.82rem; text-decoration: none; transition: color .2s; }
+.f-col ul li a:hover { color: var(--accent2); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.15); padding-top: 1.2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.78rem; opacity: .6; flex-wrap: wrap; gap: .5rem;
+}
+.footer-bottom a { color: var(--accent2); text-decoration: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-map { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .topic-grid { grid-template-columns: 1fr; }
+  .nav-cats { display: none; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero { padding: 2rem 1rem; }
+  .page-wrap { padding: 0 1rem 3rem; }
+}
+
+/* stagger delays */
+.topic-card:nth-child(1){animation-delay:.04s} .topic-card:nth-child(2){animation-delay:.08s}
+.topic-card:nth-child(3){animation-delay:.12s} .topic-card:nth-child(4){animation-delay:.16s}
+.topic-card:nth-child(5){animation-delay:.20s} .topic-card:nth-child(6){animation-delay:.24s}
+.topic-card:nth-child(7){animation-delay:.28s} .topic-card:nth-child(8){animation-delay:.32s}
+.topic-card:nth-child(9){animation-delay:.36s} .topic-card:nth-child(10){animation-delay:.40s}
+</style>
+</head>
+<body>
+
+<div class="bg-fixed"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand"><span class="bolt">⚡</span> ThunderStudy Delhi</a>
+    <ul class="nav-cats">
+      <li><a href="#history">🏛️ History</a></li>
+      <li><a href="#food">🍢 Food</a></li>
+      <li><a href="#tourist">🗺️ Tourist</a></li>
+      <li><a href="#area">🧭 Areas</a></li>
+      <li><a href="#edu">📚 Students</a></li>
+      <li><a href="#life">🎭 Lifestyle</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-pill"><span class="live-dot"></span>Complete Delhi Knowledge Hub</div>
+    <h1>The <em>Complete</em> Guide to Delhi — Every Topic, In Detail</h1>
+    <p class="hero-desc">60 in-depth topics across 6 categories. From Mughal monuments to street food lanes, from DU college life to Delhi's startup scene — everything you need to know about India's capital.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">60</div><div class="hstat-l">Topics</div></div>
+      <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Sections</div></div>
+      <div class="hstat"><div class="hstat-n">3000+</div><div class="hstat-l">Yrs History</div></div>
+      <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">UNESCO Sites</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#history" class="btn-p">Start Exploring</a>
+      <a href="https://wondermayank.github.io/contact" target="_blank" class="btn-o">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-map">
+    <div class="map-wrap">
+      <div class="map-ring"></div>
+      <div class="map-ring2"></div>
+      <svg class="delhi-svg" xmlns="http://www.w3.org/2000/svg" viewBox="50 10 560 570">
+        <defs>
+          <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#6bb8e8"/>
+            <stop offset="100%" style="stop-color:#1e90d6"/>
+          </linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <polygon filter="url(#glow)" fill="url(#dg)" stroke="#0a6baf" stroke-width="1.5"
+          points="454.373,134.955 448.776,143.164 454.373,152.866 459.97,174.508 459.97,214.806 459.97,244.657 471.91,272.549 465.94,277.037 442.806,278.437 442.806,273.015 433.478,273.015 439.447,281.06 436.09,297.687 426.762,301.406 411.09,297.687 406.238,305.127 385.717,324.508 372.656,345.402 358.104,318.537 351.015,318.537 351.015,324.508 339.074,324.508 333.104,312.566 333.104,297.687 339.074,281.06 333.104,275.813 339.074,269.284 319.299,263.313 312.955,275.813 289.075,286.306 280.492,286.306 248.03,301.373 240.567,294 240.567,278.612 221.537,273.015 204,273.015 180.119,287.94 168.552,287.94 133.664,269.284 135.25,249.881 144.299,231.224 126.201,217.791 138.328,195.403 131.239,190.179 136.089,181.224 121.164,167.791 131.239,152.866 126.388,143.164 126.388,126.747 115.94,115.552 126.388,95.217 136.089,100.627 140.567,89.806 148.03,85.702 156.985,89.806 180.119,69.284 195.791,69.284 212.209,69.284 230.866,77.493 240.567,56.97 255.493,34.582 267.433,39.433 275.269,32.717 273.403,27.866 277.134,23.015 283.851,23.015 289.075,32.717 312.955,36.448 325.642,50.067 333.104,43.165 345.045,43.165 351.015,56.97 351.015,69.284 365.194,69.284 380.119,51.373 391.312,46.896 430.865,51.373 436.09,62.567 436.09,69.284 442.806,85.702 436.09,93.911 436.09,107.343 417.433,102.866 417.433,121.149 426.762,130.478 448.776,130.478"
+          transform="translate(3.5,-22.5)"/>
+        <polygon filter="url(#glow)" fill="url(#dg)" stroke="#0a6baf" stroke-width="1.5"
+          points="358.406,318.561 372.958,345.426 374.451,355.873 371.466,364.828 366.242,376.77 357.287,376.77 355.048,383.857 357.287,391.693 366.242,402.143 366.242,406.246 366.242,413.336 357.287,410.352 352.81,413.336 343.854,410.352 336.392,402.143 329.488,406.619 322.958,402.143 287.23,396.172 280.888,387.217 276.689,387.217 276.689,380.5 285.085,380.5 289.377,364.828 333.406,312.59 339.376,324.529 351.316,324.529 351.316,318.561"
+          transform="translate(3.5,-22.5)"/>
+        <polyline filter="url(#glow)" fill="url(#dg)" stroke="#0a6baf" stroke-width="1.5"
+          points="1.761,391.672 6.239,402.119 12.209,406.598 25.642,413.312 30.866,422.082 35.343,424.134 45.045,432.902 49.522,437.566 45.045,456.224 54,460.328 62.209,460.328 66.687,452.119 74.149,451.466 83.851,448.201 93.552,454.73 100.269,452.119 107.731,452.119 129.373,457.343 139.075,452.119 161.527,440.925 174.335,446.896 180.119,440.925 196.537,444.283 201.015,437.566 186.089,424.134 192.06,420.029 201.015,420.029 221.537,428.238 240.567,437.566 237.582,444.283 254,452.119 260.716,446.896 264.261,446.896 269.672,441.672 295,446.896 295,457.343 322.656,467.045 316.127,490.925 312.955,496.521 316.127,502.119 325.922,514.806 329.188,526.373 339.821,534.955 358.104,536.82 368.553,544.283 374.149,549.881 374.149,561.82 383.104,564.806 385.717,578 385.717,574.508 395.978,567.791 402.881,567.791 418.926,567.791 448.776,561.82 462.955,549.881 471.91,549.881 477.508,538.688 471.91,534.955 471.91,517.791 462.955,511.82 454.373,511.82 454.373,502.119 462.955,490.925 471.91,484.209 500.269,478.238 500.269,473.761 513.701,467.045 530.119,467.045 536.09,473.761 542.06,478.238 550.269,478.238 560.344,473.761 583.104,446.896 570.418,428.238 550.269,411.82 542.06,409.77 530.119,387.193 530.119,376.746 520.418,369.423 495.045,350.627 489.821,314.816 483.104,286.062 471.91,272.549 465.94,277.037 442.806,278.437 442.806,273.015 433.478,273.015 439.447,281.06 436.09,297.687 442.806,306.971 462.955,318.537 462.955,345.402 462.955,355.852 442.806,360.328 442.806,368.07 432.358,370.775 426.388,370.775 429.373,376.746 435.344,376.746 429.373,391.672 413.701,391.672 413.701,383.836 392.06,380.291 374.149,355.852 371.164,364.807 365.94,376.746 356.985,376.746 354.746,383.836 356.985,391.672 365.94,402.119 365.94,406.225 365.94,413.312 356.985,410.328 352.508,413.312 343.553,410.328 336.09,402.119 329.188,406.598 322.656,402.119 286.929,396.148 280.586,387.193 276.388,387.193 276.388,380.479 284.783,380.479 289.075,364.807 333.104,312.566 333.104,301.373 339.074,281.06 333.104,275.813 339.074,269.284 319.299,263.313 312.955,275.813 289.075,286.306 280.492,286.306 248.03,301.373 240.567,294 240.567,278.612 221.537,273.015 204,273.015 180.119,287.94 168.552,287.94 161.527,284.184 133.664,269.284 118.552,267.828 107.731,272.445 98.216,293.5 118.552,307.381 115.94,315.553 107.731,324.508 88.701,312.566 83.851,312.566 70.418,318.537 58.104,309.619 49.522,312.566 40.194,338.688 35.343,341.672 35.343,350.627 28.254,364.199 6.239,364.807 -1.97,370.775 1.761,370.775 1.761,380.291 1.761,387.754"
+          transform="translate(3.5,-22.5)"/>
+        <polygon filter="url(#glow)" fill="url(#dg)" stroke="#0a6baf" stroke-width="1.5"
+          points="411.392,297.709 427.062,301.43 436.392,297.709 443.107,306.993 463.257,318.561 463.257,345.426 463.257,355.873 443.107,360.352 443.107,368.093 432.66,370.798 426.689,370.798 429.675,376.77 435.646,376.77 429.675,391.693 414.003,391.693 414.003,383.857 392.361,380.312 374.451,355.873 372.958,345.426 386.019,324.529 406.54,305.148"
+          transform="translate(3.5,-22.5)"/>
+        <polyline filter="url(#glow)" fill="url(#dg)" stroke="#0a6baf" stroke-width="1.5"
+          points="553.667,293.5 556,286.333 556,274 558.667,268 558.667,259 563.75,256.667 569.667,255 569.667,249.333 566.334,241.333 561.167,233 561.167,222.833 566.334,215.667 556,217.083 551.334,215.667 536.667,215.667 530,218.5 530,221.333 526,224.333 518.167,221.333 517,215.667 519.334,211.667 519.334,204.333 501.334,189 496.334,190.167 487.667,191.333 481.834,189 479.667,181.667 484,173 479.667,167 470,167 456.51,161.127 459.97,174.508 459.97,244.657 471.91,272.549 483.104,286.062 489.821,314.816 495.045,350.627 530.119,376.746 531.334,368.334 540.667,359 546,349.334 561.167,349.334 566.334,345.402 575.667,343 579,337 580.334,325.334 577.667,319.334 569.667,312.59 553.667,301.334 553.667,292"
+          transform="translate(3.5,-22.5)"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<div class="page-wrap">
+
+<!-- ═══════════ 1. HISTORY & HERITAGE ═══════════ -->
+<div class="chapter" id="history">
+  <div class="chapter-banner ch-history">
+    <div class="chapter-banner-icon">🏛️</div>
+    <div class="chapter-banner-text">
+      <h2>History & Heritage</h2>
+      <p>3,000+ years of dynasties, monuments, stories and timelines — all in one place</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">📜</span> History of Delhi</h3>
+      <div class="topic-body">
+        Delhi's recorded history spans over <strong>3,000 years</strong>, making it one of the oldest continuously inhabited cities in the world. Ancient texts identify the region as <strong>Indraprastha</strong>, the legendary capital of the Pandavas in the Mahabharata era. Archaeological excavations at Purana Qila have unearthed pottery dating back to around <strong>900 BCE</strong>, confirming human settlement long before recorded history.<br><br>
+        Delhi served as the capital of the <strong>Tomara Rajputs</strong> in the 8th century CE, followed by the Chahamanas (Chauhans). In 1192, after the Second Battle of Tarain, <strong>Prithviraj Chauhan</strong> was defeated by Muhammad of Ghor, marking the beginning of Islamic rule in Delhi. The city then witnessed the rise and fall of seven major cities — each built over or near the previous — including Qila Rai Pithora, Siri, Tughlaqabad, Jahanpanah, Firozabad, Dinpanah/Purana Qila, and finally Shahjahanabad (Old Delhi). Post-1857 uprising, power shifted to the British, who built <strong>New Delhi</strong> between 1911–1931. Since Independence in 1947, Delhi has evolved into the <strong>National Capital Territory</strong>, a mega-metropolis of 32 million people.
+      </div>
+      <div class="topic-tags"><span class="ttag">Ancient India</span><span class="ttag">Indraprastha</span><span class="ttag">7 Cities</span><span class="ttag">1947</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🌆</span> Old Delhi vs New Delhi</h3>
+      <div class="topic-body">
+        <strong>Old Delhi (Shahjahanabad)</strong> was built by Mughal Emperor Shah Jahan between 1638–1648. It is characterised by narrow winding lanes called <em>galis</em>, ornate mosques, havelis, and the magnificent Red Fort. The neighbourhood of Chandni Chowk remains the commercial and cultural heart of Old Delhi — dense, chaotic, and deeply traditional.<br><br>
+        <strong>New Delhi</strong>, designed by British architects <strong>Edwin Lutyens and Herbert Baker</strong>, was inaugurated in 1931. It features wide tree-lined boulevards, imposing colonial buildings (Rashtrapati Bhavan, Parliament House, India Gate) and a planned radial street layout. Connaught Place forms its commercial centre. The contrast between the two Delhis is stark — Old Delhi's unplanned organic growth versus New Delhi's imperial geometry and open spaces. Together they form the world's most fascinating urban duality.
+      </div>
+      <div class="topic-tags"><span class="ttag">Shahjahanabad</span><span class="ttag">Lutyens Delhi</span><span class="ttag">1648</span><span class="ttag">1931</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">🕌</span> Mughal Heritage</h3>
+      <div class="topic-body">
+        The Mughal Empire (1526–1857) left Delhi with some of <strong>South Asia's most breathtaking architecture</strong>. Emperor Babur founded the empire; his grandson <strong>Akbar</strong> expanded it; and Shah Jahan gave Delhi its most iconic identity. Key Mughal legacies include:<br><br>
+        <strong>Red Fort (Lal Qila)</strong> — Shah Jahan's palace-fortress, completed 1648. <strong>Jama Masjid</strong> — India's largest mosque, built 1656, accommodating 25,000 worshippers. <strong>Humayun's Tomb</strong> — a UNESCO site and the architectural precursor to the Taj Mahal, built by Hamida Banu Begum in 1572. The <strong>Qutub Minar Complex</strong>, though pre-Mughal, also saw Mughal additions. Mughal influence permeates Delhi's food (biryani, kebabs, korma), language (Urdu vocabulary in Hindi), crafts (zardozi embroidery, bidriware), and music (classical ghazals and qawwali).
+      </div>
+      <div class="topic-tags"><span class="ttag">Red Fort</span><span class="ttag">Jama Masjid</span><span class="ttag">Shah Jahan</span><span class="ttag">UNESCO</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🏗️</span> British-era Architecture</h3>
+      <div class="topic-body">
+        When the British shifted India's capital from Calcutta to Delhi in 1911, they commissioned a grand new city. Architects <strong>Edwin Lutyens</strong> and <strong>Herbert Baker</strong> designed a fusion of <em>Indo-Saracenic, Classical, and Baroque</em> styles.<br><br>
+        <strong>Rashtrapati Bhavan</strong> (formerly Viceroy's House), completed 1929, features a massive Mughal garden and a dome inspired by the Pantheon. <strong>Parliament House</strong> is a circular colonnaded structure representing democratic ideals. <strong>Secretariat Buildings</strong> (North and South Block) flank Rajpath (now Kartavya Path) with colonnaded facades. <strong>India Gate</strong> (1931) commemorates 90,000 Indian soldiers who died in WWI. <strong>Connaught Place</strong> — a Georgian-style circular commercial district — was designed by Robert Tor Russell. The <strong>Safdarjung Tomb</strong> (1754), though Mughal, also reflects late Mughal-British transition. Old colonial bungalows of Lutyens' Delhi still house embassies and government officers, maintaining their original character.
+      </div>
+      <div class="topic-tags"><span class="ttag">Lutyens</span><span class="ttag">1911</span><span class="ttag">Rashtrapati Bhavan</span><span class="ttag">India Gate</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">👑</span> Famous Rulers of Delhi</h3>
+      <div class="topic-body">
+        Delhi has been ruled by some of history's most remarkable leaders:<br><br>
+        <strong>Prithviraj Chauhan (1178–1192)</strong> — Last Hindu king of Delhi; defeated by Muhammad Ghori at the Battle of Tarain. <strong>Qutb ud-Din Aibak (1206–1210)</strong> — Founded the Delhi Sultanate; built Qutub Minar. <strong>Iltutmish (1211–1236)</strong> — Consolidated the Sultanate; first to issue silver coins. <strong>Alauddin Khalji (1296–1316)</strong> — Repelled Mongol invasions; built Siri Fort and Alai Darwaza. <strong>Muhammad bin Tughlaq (1325–1351)</strong> — Known for controversial decisions including moving the capital to Daulatabad. <strong>Sher Shah Suri (1540–1545)</strong> — Briefly overthrew Mughals; built the Grand Trunk Road. <strong>Akbar (1556–1605)</strong> — Greatest Mughal; known for religious tolerance and administrative reforms. <strong>Shah Jahan (1628–1658)</strong> — Built Red Fort, Jama Masjid, and the Taj Mahal. <strong>Aurangzeb (1658–1707)</strong> — Last powerful Mughal; empire declined after him. <strong>Bahadur Shah Zafar (1837–1857)</strong> — Last Mughal emperor; exiled after the 1857 revolt.
+      </div>
+      <div class="topic-tags"><span class="ttag">Prithviraj</span><span class="ttag">Mughals</span><span class="ttag">Sultanate</span><span class="ttag">British</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">📅</span> Historical Timelines</h3>
+      <div class="topic-body">
+        <strong>~900 BCE</strong> — Earliest settlements at Indraprastha (Purana Qila area).<br>
+        <strong>736 CE</strong> — Tomara Rajputs establish Lal Kot (Delhi's first city).<br>
+        <strong>1192</strong> — Battle of Tarain; Islamic rule begins under Muhammad Ghori.<br>
+        <strong>1206</strong> — Delhi Sultanate founded by Qutb ud-Din Aibak.<br>
+        <strong>1398</strong> — Timur (Tamerlane) invades and sacks Delhi.<br>
+        <strong>1526</strong> — First Battle of Panipat; Babur defeats Ibrahim Lodi, founding Mughal Empire.<br>
+        <strong>1540</strong> — Sher Shah Suri defeats Humayun; builds Purana Qila.<br>
+        <strong>1556</strong> — Second Battle of Panipat; Akbar defeats Hemu, restoring Mughal rule.<br>
+        <strong>1638–48</strong> — Shah Jahan builds Shahjahanabad (Old Delhi) and Red Fort.<br>
+        <strong>1739</strong> — Nadir Shah of Persia sacks Delhi; Peacock Throne taken.<br>
+        <strong>1803</strong> — British East India Company captures Delhi.<br>
+        <strong>1857</strong> — First War of Independence (Sepoy Mutiny); Bahadur Shah Zafar exiled.<br>
+        <strong>1911</strong> — British shift capital from Calcutta to Delhi.<br>
+        <strong>1931</strong> — New Delhi officially inaugurated.<br>
+        <strong>1947</strong> — India's Independence; Nehru hoists flag at Red Fort.<br>
+        <strong>1991</strong> — Delhi becomes a full National Capital Territory (NCT).
+      </div>
+      <div class="topic-tags"><span class="ttag">900 BCE</span><span class="ttag">1526</span><span class="ttag">1857</span><span class="ttag">1947</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">🏰</span> Delhi Sultanate Guide</h3>
+      <div class="topic-body">
+        The Delhi Sultanate (1206–1526) comprised <strong>five successive dynasties</strong> that ruled northern India from Delhi for over 300 years:<br><br>
+        <strong>Slave/Mamluk Dynasty (1206–1290)</strong> — Founded by Qutb ud-Din Aibak, a former slave. Built Qutub Minar, Quwwat-ul-Islam Mosque. <strong>Khalji Dynasty (1290–1320)</strong> — Alauddin Khalji conquered most of the subcontinent; introduced price-control markets; built Alai Darwaza and Siri Fort. <strong>Tughlaq Dynasty (1320–1414)</strong> — Ghiyasuddin Tughlaq built Tughlaqabad. Muhammad bin Tughlaq controversially shifted capital to Daulatabad. Firoz Shah Tughlaq built Firozabad (Firoz Shah Kotla). <strong>Sayyid Dynasty (1414–1451)</strong> — A weaker phase after Timur's invasion. <strong>Lodi Dynasty (1451–1526)</strong> — Afghan rulers; Ibrahim Lodi was defeated by Babur at Panipat, ending the Sultanate. Sites to visit: Qutub Complex, Tughlaqabad Fort, Firoz Shah Kotla, Siri Fort ruins, Alai Darwaza, Lodi Garden tombs.
+      </div>
+      <div class="topic-tags"><span class="ttag">Khalji</span><span class="ttag">Tughlaq</span><span class="ttag">Mamluk</span><span class="ttag">1206–1526</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">🕯️</span> Stories of Shahjahanabad</h3>
+      <div class="topic-body">
+        Shahjahanabad — built by Emperor Shah Jahan between 1638 and 1648 — was once the <strong>most prosperous city in the world</strong>. The walled city, roughly 6.5 km in circumference with 14 gates (including Kashmere Gate, Delhi Gate, Ajmeri Gate), housed an estimated 4 lakh people.<br><br>
+        The <strong>Chandni Chowk</strong> bazaar was designed by Shah Jahan's daughter Jahanara and flanked by a canal reflecting moonlight (hence "Chandni" — moonlit). The street hosted jewellers, silversmiths, spice merchants, and poets. The city's culture was profoundly Urdu — it was the birthplace of poets like <strong>Mirza Ghalib</strong> and <strong>Bahadur Shah Zafar</strong>. After the 1857 revolt, the British demolished much of the walled city to build railway lines and barracks. Yet the mohallas (neighbourhoods) of Ballimaran, Matia Mahal, Hauz Qazi, and Darya Ganj still breathe the spirit of Shahjahanabad. Walking through its lanes today is like stepping into a living museum.
+      </div>
+      <div class="topic-tags"><span class="ttag">Shah Jahan</span><span class="ttag">Ghalib</span><span class="ttag">Walled City</span><span class="ttag">1648</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">🚶</span> Heritage Walks</h3>
+      <div class="topic-body">
+        Delhi's streets are outdoor museums. Several curated heritage walks take you through centuries of history on foot:<br><br>
+        <strong>Chandni Chowk Walk</strong> — Start at Red Fort, walk past Jama Masjid, the spice market Khari Baoli, Gauri Shankar Temple, Fatehpuri Mosque, and Ballimaran (Ghalib's mohalla). <strong>Mehrauli Archaeological Park Walk</strong> — Over 80 monuments spanning 1,000 years in one park, including Jamali Kamali Mosque and Balban's Tomb. <strong>Nizamuddin Basti Walk</strong> — Sufi dargahs, old havelis, Humayun's Tomb vicinity, and Thursday qawwali evenings. <strong>Lodi Garden Walk</strong> — 15th-century Lodi and Sayyid tombs amid manicured lawns. <strong>Agrasen ki Baoli Walk</strong> — A 14th-century stepwell hidden between skyscrapers in Connaught Place. <strong>Organizations</strong> offering guided walks: INTACH Delhi, Delhi Heritage Walks, Gullywale Tours. Best time: October–March, early mornings.
+      </div>
+      <div class="topic-tags"><span class="ttag">INTACH</span><span class="ttag">Mehrauli</span><span class="ttag">Nizamuddin</span><span class="ttag">Chandni Chowk</span></div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">🌍</span> UNESCO Heritage Places</h3>
+      <div class="topic-body">
+        Delhi is home to <strong>three UNESCO World Heritage Sites</strong> — a concentration rivalled by few cities globally:<br><br>
+        <strong>Qutub Minar Complex (1993)</strong> — Built in the 12th–13th centuries, includes the 73-metre Qutb Minar (world's tallest brick minaret), Quwwat-ul-Islam Mosque (first mosque in India), Alai Darwaza, and the famous Iron Pillar of Chandragupta II (c. 375–415 CE) which has resisted corrosion for 1,600 years.<br><br>
+        <strong>Humayun's Tomb (1993)</strong> — Built in 1572 by Hamida Banu Begum, this was the first garden-tomb (charbagh style) in the subcontinent and directly inspired the Taj Mahal. It shelters the remains of Humayun and over 100 Mughal family members.<br><br>
+        <strong>Red Fort Complex (2007)</strong> — Shah Jahan's magnificent palace-fortress on the banks of the Yamuna. Its Diwan-i-Aam, Diwan-i-Khas, Rang Mahal, and Moti Masjid represent the pinnacle of Mughal artisanship. India's Prime Minister delivers the Independence Day address from its ramparts every August 15th.
+      </div>
+      <div class="topic-tags"><span class="ttag">Qutub Minar</span><span class="ttag">Humayun's Tomb</span><span class="ttag">Red Fort</span><span class="ttag">UNESCO 1993</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-div">· · · ·</div>
+
+<!-- ═══════════ 2. FOOD ═══════════ -->
+<div class="chapter" id="food">
+  <div class="chapter-banner ch-food">
+    <div class="chapter-banner-icon">🍢</div>
+    <div class="chapter-banner-text">
+      <h2>Food Section</h2>
+      <p>Street stalls to Mughlai feasts — Delhi is one of the world's great food cities</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">🍽️</span> Street Food Guide</h3>
+      <div class="topic-body">
+        Delhi's street food culture is <strong>unparalleled in India</strong>. The city's 30+ million people have created a food ecosystem where every lane, corner, and market has its own legendary stall. Key street foods to try:<br><br>
+        <strong>Gol Gappa / Pani Puri</strong> — Crispy hollow spheres filled with spiced water, tamarind chutney, and chickpeas. A Delhi staple found everywhere. <strong>Chaat</strong> — A category of sour-spicy-sweet snacks: aloo chaat, dahi bhalla, papdi chaat, bhel puri. Best at Bengali Market, Chandni Chowk, and Lajpat Nagar. <strong>Aloo Tikki</strong> — Spiced potato patties served with chutneys, popular since the 1950s. <strong>Kulcha Naan</strong> — Leavened flatbreads from tandoor ovens, best paired with chole. <strong>Momos</strong> — Tibetan dumplings, ubiquitous in South and North Campus areas, now a Delhi staple. <strong>Rolls and Wraps</strong> — Kathi rolls (originally Kolkata) adopted and evolved by Delhi street vendors. Best areas: Chandni Chowk, South Extension, Karol Bagh, Lajpat Nagar Market, Satya Niketan.
+      </div>
+      <div class="topic-tags"><span class="ttag">Gol Gappa</span><span class="ttag">Chaat</span><span class="ttag">Momos</span><span class="ttag">Aloo Tikki</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🛺</span> Chandni Chowk Food Tour</h3>
+      <div class="topic-body">
+        Chandni Chowk is <strong>Asia's oldest market street</strong> and arguably India's greatest food destination. A food tour here covers 400 years of culinary history.<br><br>
+        <strong>Paranthe Wali Gali</strong> — A narrow lane with 3–4 legendary shops serving stuffed parathas since the 1870s. Try mooli (radish), gobhi (cauliflower), and keema parathas. <strong>Jalebi Wala (Old Famous Jalebi Wala)</strong> — Near Dariba Kalan, operating since 1884. Their crispy jalebis dripping with syrup are unmissable. <strong>Natraj Dahi Bhalle Wala</strong> — Their dahi bhalle (lentil dumplings in yogurt) have a 70-year legacy. <strong>Kuremal Mohan Lal Kulfi</strong> — Fruit-stuffed kulfi made since 1906 in Sitaram Bazaar. <strong>Al Jawahar Restaurant</strong> — Near Jama Masjid, known for authentic Mughlai cuisine since 1947. <strong>Giani's Di Hatti</strong> — Faluda ice cream and lassi near the Red Fort. Best visited on an empty stomach, on foot, in the morning.
+      </div>
+      <div class="topic-tags"><span class="ttag">Paranthe Wali Gali</span><span class="ttag">Jalebi</span><span class="ttag">Kulfi</span><span class="ttag">1884</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">🫘</span> Best Chole Bhature Spots</h3>
+      <div class="topic-body">
+        Chole Bhature — spiced chickpea curry with fried puffed bread — is arguably <strong>Delhi's most iconic dish</strong>. The dish has Punjabi origins and reached Delhi with the massive post-Partition migration.<br><br>
+        <strong>Sita Ram Diwan Chand (Paharganj, est. 1950s)</strong> — Queues form by 8 AM. Their chole has a uniquely smoky, dark masala. Opens only until noon. <strong>Haldiram's</strong> — The national chain's Chandni Chowk outlet remains a benchmark. <strong>Nand di Hatti (Kamla Nagar)</strong> — Beloved by Delhi University students. <strong>Chache Di Hatti (Kamla Nagar)</strong> — Operated by brothers, their chole-bhature is a North Campus institution. <strong>Baba Nagpal Corner (Lajpat Nagar)</strong> — Evening chole-kulche specialist since the 1980s. <strong>Roshan Di Kulfi, Karol Bagh</strong> — Also known for their morning chole bhature. The best chole is distinguished by its masala depth, the texture of chickpeas, and the oil-soaked bhatura's chewiness.
+      </div>
+      <div class="topic-tags"><span class="ttag">Chole</span><span class="ttag">Bhature</span><span class="ttag">Paharganj</span><span class="ttag">Kamla Nagar</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🫓</span> Famous Paratha Places</h3>
+      <div class="topic-body">
+        The stuffed paratha is Delhi's ultimate <strong>comfort food</strong> — a thick whole-wheat flatbread filled with spiced vegetables, paneer, or meat, cooked on a tava with generous ghee or butter.<br><br>
+        <strong>Paranthe Wali Gali, Chandni Chowk</strong> — Three competing shops (Kanhaiyalal, Premchand Paranthewale, Gaya Paranthewale) all claiming to be the original since 1875. Each offers 20+ stuffing varieties. <strong>The Paratha Factory (Multiple Outlets)</strong> — Modern take on the classic, popular in South Delhi. <strong>Moolchand Parantha (Moolchand Flyover)</strong> — A Delhi classic open late nights, popular with office workers. <strong>Eatopia (Hauz Khas)</strong> — Upscale parathas with creative stuffings. <strong>Kake Da Hotel (Connaught Place)</strong> — Old-school Punjabi thali including parathas. The ultimate paratha is served with white butter (makhan), fresh curd (dahi), and house-made pickle (achaar).
+      </div>
+      <div class="topic-tags"><span class="ttag">Stuffed Paratha</span><span class="ttag">Ghee</span><span class="ttag">1875</span><span class="ttag">Chandni Chowk</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">🫕</span> Mughlai Food Culture</h3>
+      <div class="topic-body">
+        Mughlai cuisine — the culinary legacy of the Mughal courts — is a <strong>fusion of Persian, Central Asian, and Indian cooking traditions</strong> refined over 300 years. It is characterised by rich gravies, slow-cooked meats, aromatic spices, dry fruits, and saffron.<br><br>
+        <strong>Biryani</strong> — Layered rice and meat dish; Delhi's "Dilli-style" biryani (lighter than Hyderabadi) is found at Karim's, Al Jawahar, Jawahar. <strong>Kebabs</strong> — Seekh kebab (minced), shammi kebab (lentil-meat), galouti (melt-in-mouth patty from Lucknow style), and kakori kebab. Best at Karim's, near Jama Masjid (since 1913). <strong>Nihari</strong> — A slow-cooked meat stew traditionally eaten at dawn by Mughal court workers. <strong>Korma</strong> — Braised meat in yogurt-nut gravy. <strong>Shahi Tukda</strong> — Bread pudding with rabdi and rose syrup. Mughlai food in Delhi is best experienced in the lanes around Jama Masjid — especially at Aslam's Chicken, Al Jawahar, and Haji Noora.
+      </div>
+      <div class="topic-tags"><span class="ttag">Biryani</span><span class="ttag">Kebabs</span><span class="ttag">Nihari</span><span class="ttag">Karim's</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">☕</span> Café Culture in Delhi</h3>
+      <div class="topic-body">
+        Delhi's café scene has <strong>exploded since the 2010s</strong>, transforming the city into a serious contender among India's top coffee destinations. The culture blends colonial-era tea houses with third-wave specialty coffee shops.<br><br>
+        <strong>Hauz Khas Village</strong> — The original café district; rooftop cafés overlooking the medieval Hauz Khas lake and fort. Blue Tokai Coffee Roasters here is a must-visit. <strong>Khan Market</strong> — Upscale cafés like The Big Chill (known for pasta and desserts since 2000) and Perch Wine & Coffee Bar. <strong>Lajpat Nagar & South Extension</strong> — Chai point culture; traditional tapri chai meets modern cold brew. <strong>Connaught Place</strong> — United Coffee House (1942), one of Delhi's oldest cafés, a colonial relic with wood panelling. <strong>Shahpur Jat & Kalindi Colony</strong> — Artisan, industrial-aesthetic cafés patronised by Delhi's design community. Top café chains: Blue Tokai, Daryaganj Coffee, Third Wave Coffee.
+      </div>
+      <div class="topic-tags"><span class="ttag">Blue Tokai</span><span class="ttag">Hauz Khas</span><span class="ttag">Third Wave</span><span class="ttag">Big Chill</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">💰</span> Budget Food under ₹100</h3>
+      <div class="topic-body">
+        Delhi is one of <strong>India's most budget-friendly food cities</strong> — you can eat extraordinarily well for under ₹100. Here's how:<br><br>
+        <strong>Gol Gappa (₹10–20)</strong> — 6 pieces at any street stall. <strong>Aloo Tikki with chutney (₹20–30)</strong> — Filling and delicious. <strong>Samosa (₹5–15)</strong> — A deep-fried potato pastry; Haldiram's versions are consistent. <strong>Momos (₹40–60)</strong> — A plate of 6 at DU campus stalls. <strong>Bread Pakoda (₹15–25)</strong> — Besan-fried bread with potato stuffing; a Delhi breakfast staple. <strong>Poori Sabzi (₹30–50)</strong> — Deep-fried pooris with aloo sabzi; found at dhabas near Metro stations. <strong>Masala Chai (₹5–15)</strong> — Tea from tapris (roadside stalls). <strong>Thali at a Dhaba (₹60–90)</strong> — Rice, dal, two sabzis, roti, and papad. Best budget zones: Paharganj, Chandni Chowk, Kamla Nagar, Laxmi Nagar, Old Rajendra Nagar, and any university campus canteen.
+      </div>
+      <div class="topic-tags"><span class="ttag">Under ₹100</span><span class="ttag">Street Stall</span><span class="ttag">Dhaba</span><span class="ttag">Student Food</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">🍮</span> Best Sweets & Desserts</h3>
+      <div class="topic-body">
+        Delhi has a <strong>legendary mithai (sweets) culture</strong> rooted in its Punjabi, Mughal, and UP heritage. Key shops and sweets:<br><br>
+        <strong>Ghantewala Halwai (Chandni Chowk, est. 1790)</strong> — Reportedly India's oldest sweet shop; famous for sohan halwa. <strong>Nathu's Sweets (Bengali Market)</strong> — Known for malpua, kheer, and Bengali rosogolla. <strong>Old Famous Jalebi Wala (Chandni Chowk)</strong> — Deep-fried swirls of batter, soaked in sugar syrup; best fresh at 7 AM. <strong>Kuremal Kulfi (Sitaram Bazaar)</strong> — Seasonal fruit kulfi since 1906. <strong>Roshan Di Kulfi (Karol Bagh)</strong> — Falooda, kulfi, and rabdi since 1943. <strong>Annapurna Sweets (INA)</strong> — South Indian sweets alongside Bengali mishti. <strong>Gulab Jamun</strong> — Soft milk-solid dumplings in sugar syrup; found at every mithai shop. <strong>Shahi Tukda</strong> — Fried bread soaked in condensed milk and rose water; a Mughlai dessert at Old Delhi restaurants.
+      </div>
+      <div class="topic-tags"><span class="ttag">Jalebi</span><span class="ttag">Kulfi</span><span class="ttag">Halwa</span><span class="ttag">Ghantewala</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">🏪</span> Food Markets</h3>
+      <div class="topic-body">
+        Delhi's food markets are <strong>sensory overloads of colour, fragrance, and taste</strong>:<br><br>
+        <strong>Khari Baoli (Chandni Chowk)</strong> — Asia's largest wholesale spice market; over 500 shops selling spices, dry fruits, herbs, and teas since the 17th century. The aromas are intoxicating. <strong>Lajpat Nagar Central Market</strong> — Mix of street food stalls, sweet shops, and full meals. Evening crowds are massive. <strong>Sarojini Nagar Market</strong> — Popular with students; cheap street food alongside fashion bargains. <strong>INA Market (India International Centre area)</strong> — Imported goods, fresh produce, and diverse food stalls. <strong>Majnu ka Tila (Tibetan Colony)</strong> — Delhi's Tibetan neighbourhood; momos, thukpa, butter tea, and Tibetan bakeries. <strong>Jama Masjid Food Street</strong> — The lane running south of Jama Masjid is Delhi's Mughlai food hub, especially vibrant after evening prayers. <strong>Sunday market at Daryaganj</strong> — Weekend book market with chai and snack stalls.
+      </div>
+      <div class="topic-tags"><span class="ttag">Khari Baoli</span><span class="ttag">Spice Market</span><span class="ttag">INA</span><span class="ttag">Sarojini Nagar</span></div>
+    </div>
+
+    <div class="topic-card ch-food-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">📍</span> Food by Area</h3>
+      <div class="topic-body">
+        Each Delhi neighbourhood has its own <strong>food identity</strong>:<br><br>
+        <strong>Chandni Chowk / Old Delhi</strong> — Mughlai, street food, parathas, jalebis, kebabs. <strong>Connaught Place (CP)</strong> — Upscale restaurants, continental, South Indian (Saravana Bhavan), fast food chains, and United Coffee House. <strong>Hauz Khas</strong> — Cafés, continental, Thai, Japanese, craft beer bars. <strong>Karol Bagh</strong> — North Indian, Punjabi dhabas, kulfi, chole bhature. <strong>South Extension (South Ex)</strong> — Multi-cuisine restaurants, bakeries, upscale dining. <strong>Lajpat Nagar</strong> — Rajasthani, Sindhi, and Punjabi food; excellent chaat. <strong>Majnu Ka Tila</strong> — Tibetan cuisine exclusively. <strong>Chittaranjan Park (CR Park)</strong> — Best Bengali food in Delhi: fish fry, mishti doi, kosha mangsho. <strong>Munirka</strong> — South Indian food hub near JNU. <strong>Paharganj</strong> — Budget backpacker cafés, Israeli food, pancakes, and thalis.
+      </div>
+      <div class="topic-tags"><span class="ttag">Area-wise</span><span class="ttag">Bengali</span><span class="ttag">Tibetan</span><span class="ttag">Paharganj</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-div">· · · ·</div>
+
+<!-- ═══════════ 3. TOURIST PLACES ═══════════ -->
+<div class="chapter" id="tourist">
+  <div class="chapter-banner ch-tourist">
+    <div class="chapter-banner-icon">🗺️</div>
+    <div class="chapter-banner-text">
+      <h2>Tourist Places</h2>
+      <p>Iconic landmarks, hidden gems, museums, and photography spots across the capital</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">🕯️</span> India Gate Guide</h3>
+      <div class="topic-body">
+        <strong>India Gate</strong> (originally All India War Memorial) is a 42-metre tall triumphal arch standing at the eastern end of Kartavya Path (formerly Rajpath). Designed by <strong>Edwin Lutyens</strong> and completed in <strong>1931</strong>, it commemorates over 90,000 Indian soldiers who died in World War I and the Third Anglo-Afghan War. The names of 13,300 soldiers are inscribed on its surface.<br><br>
+        At its base burns the <strong>Amar Jawan Jyoti</strong> (eternal flame), inaugurated in 1972 by Prime Minister Indira Gandhi. In January 2022, the Amar Jawan Jyoti was merged with the National War Memorial flame nearby. India Gate is surrounded by a large circular lawn — a popular gathering spot for evening picnics. The area is illuminated beautifully at night. Republic Day parade passes through here every January 26. <strong>Best time to visit:</strong> Sunset to 10 PM. <strong>Entry:</strong> Free. <strong>Nearest Metro:</strong> Central Secretariat (Yellow/Violet line).
+      </div>
+      <div class="topic-tags"><span class="ttag">1931</span><span class="ttag">Lutyens</span><span class="ttag">WWI Memorial</span><span class="ttag">Free Entry</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🔴</span> Red Fort Guide</h3>
+      <div class="topic-body">
+        <strong>Red Fort (Lal Qila)</strong> — a UNESCO World Heritage Site since 2007 — was built by Emperor Shah Jahan as his palace-fortress in Shahjahanabad, completed in <strong>1648</strong>. The fort is named for its massive red sandstone walls, which stretch nearly 2.5 km and rise 33 metres on the riverside.<br><br>
+        Key attractions inside: <strong>Lahori Gate</strong> (main entrance), <strong>Chhatta Chowk</strong> (covered bazaar), <strong>Diwan-i-Aam</strong> (Hall of Public Audience), <strong>Diwan-i-Khas</strong> (Hall of Private Audience, once housing the Peacock Throne), <strong>Rang Mahal</strong> (Palace of Colours), <strong>Mumtaz Mahal</strong> (now a museum), <strong>Moti Masjid</strong> (Pearl Mosque). The fort also hosts a <strong>Sound & Light Show</strong> in the evenings narrated by Amitabh Bachchan. India's Prime Minister delivers the Independence Day speech from the fort's ramparts every <strong>August 15</strong>. <strong>Entry:</strong> ₹35 (Indians), ₹550 (foreigners). <strong>Open:</strong> Tuesday–Sunday, 9:30 AM–4:30 PM.
+      </div>
+      <div class="topic-tags"><span class="ttag">UNESCO 2007</span><span class="ttag">Shah Jahan</span><span class="ttag">1648</span><span class="ttag">Aug 15</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">🗼</span> Qutub Minar Guide</h3>
+      <div class="topic-body">
+        <strong>Qutub Minar</strong> is a 73-metre tall fluted minaret of marble and red sandstone — the <strong>world's tallest brick minaret</strong>. Construction began in 1193 under Qutb ud-Din Aibak (Delhi Sultanate's first sultan), completed by Iltutmish in 1220, and later repaired by Firoz Shah Tughlaq in the 14th century. It has five tapering storeys, with a 14.32-metre base diameter narrowing to 2.75 metres at the top.<br><br>
+        The complex also includes: <strong>Quwwat-ul-Islam Mosque</strong> (1193, India's first mosque), <strong>Iron Pillar of Chandragupta II</strong> (c. 375–415 CE), <strong>Alai Darwaza</strong> (1311, built by Alauddin Khalji), <strong>Iltutmish's Tomb</strong> and <strong>Alai Minar</strong> (unfinished). The Iron Pillar, made of 98% pure iron, has not rusted in 1,600 years — a marvel of ancient metallurgy. <strong>Entry:</strong> ₹40 (Indians), ₹600 (foreigners). <strong>Open:</strong> Sunrise to Sunset, daily. <strong>UNESCO:</strong> 1993.
+      </div>
+      <div class="topic-tags"><span class="ttag">UNESCO 1993</span><span class="ttag">73 Metres</span><span class="ttag">1193 CE</span><span class="ttag">Iron Pillar</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🏯</span> Humayun's Tomb Guide</h3>
+      <div class="topic-body">
+        <strong>Humayun's Tomb</strong> (UNESCO 1993) was built in <strong>1572</strong> by Humayun's first wife Hamida Banu Begum, commissioned 14 years after the emperor's death. Designed by Persian architect Mirak Mirza Ghiyas, it is the <strong>first garden-tomb in the Indian subcontinent</strong> and the direct architectural predecessor of the Taj Mahal.<br><br>
+        Set within a <strong>Persian charbagh</strong> (four-part garden), the main tomb rises 47 metres, clad in red sandstone with white marble inlay and a double dome — a first in India. The complex shelters over <strong>100 Mughal family members</strong> in its chambers, earning it the nickname "Dormitory of the Mughals." <strong>Highlights:</strong> Chillah Nizamuddin Aulia (nearby Sufi saint's retreat), Isa Khan's Tomb (an earlier Afghan noble's octagonal tomb), Barber's Tomb, and Bu Halima's Garden. <strong>Entry:</strong> ₹40 (Indians), ₹600 (foreigners). <strong>Open:</strong> Sunrise to Sunset daily. Avoid Mondays (maintenance).
+      </div>
+      <div class="topic-tags"><span class="ttag">UNESCO 1993</span><span class="ttag">1572</span><span class="ttag">Charbagh</span><span class="ttag">Taj Inspiration</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">🌸</span> Lotus Temple Guide</h3>
+      <div class="topic-body">
+        The <strong>Lotus Temple</strong> is a Bahá'í House of Worship completed in <strong>1986</strong>, designed by Iranian-Canadian architect <strong>Fariborz Sahba</strong>. Shaped like a blooming lotus flower with 27 marble-clad petals arranged in groups of three, it sits in the Bahapur village area of South Delhi and is <strong>one of the most visited buildings in the world</strong> — reportedly receiving over 10,000 visitors daily.<br><br>
+        The structure is made of Greek Pentelic marble (the same used for the Parthenon). Nine pools surround the building, giving the impression the flower floats on water. Open to people of <strong>all faiths</strong>, there is no religious ceremony or service — it is a place of silent meditation. No photography inside the prayer hall. <strong>Entry:</strong> Free. <strong>Open:</strong> Tuesday–Sunday, 9 AM–5:30 PM (Oct–Mar), 9 AM–7 PM (Apr–Sep). <strong>Nearest Metro:</strong> Kalkaji Mandir (Pink/Violet line).
+      </div>
+      <div class="topic-tags"><span class="ttag">1986</span><span class="ttag">Bahá'í</span><span class="ttag">Greek Marble</span><span class="ttag">Free Entry</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">🔍</span> Hidden Places in Delhi</h3>
+      <div class="topic-body">
+        Beyond the famous monuments, Delhi hides <strong>remarkable secret gems</strong>:<br><br>
+        <strong>Agrasen ki Baoli</strong> — A 14th-century stepwell with 103 steps and 3 levels, hidden between skyscrapers near Connaught Place. <strong>Bhuli Bhatiyari Ka Mahal</strong> — A mysterious hunting lodge ruin in central Ridge forest, largely unknown. <strong>Mehrauli Archaeological Park</strong> — 80+ monuments spanning 1,000 years in one park; Jamali Kamali Mosque & Tomb is hauntingly beautiful. <strong>Sanjay Van</strong> — A 782-acre forest in South Delhi with ruins, peacocks, and walking trails. <strong>Balban's Tomb (Mehrauli)</strong> — One of India's earliest true arches, built 1287. <strong>Azimganj Serai</strong> — A forgotten Mughal caravanserai behind Jama Masjid. <strong>Firoz Shah Kotla Ruins</strong> — 14th-century citadel where locals leave offerings for djinns (spirits) every Thursday — a living folk tradition. <strong>Jahanpanah Forest</strong> — Medieval walls of the city of Jahanpanah still stand amid residential blocks in South Delhi.
+      </div>
+      <div class="topic-tags"><span class="ttag">Agrasen ki Baoli</span><span class="ttag">Mehrauli</span><span class="ttag">Hidden Gems</span><span class="ttag">Stepwell</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">🖼️</span> Museums & Galleries</h3>
+      <div class="topic-body">
+        Delhi is <strong>India's museum capital</strong> with over 40 museums covering art, history, science, and culture:<br><br>
+        <strong>National Museum (Janpath)</strong> — India's premier museum; 2 lakh artefacts including the Dancing Girl of Mohenjodaro and the Ashokan pillar. <strong>National Gallery of Modern Art (NGMA)</strong> — India Gate; works by Jamini Roy, Amrita Sher-Gil, Raja Ravi Varma. <strong>Crafts Museum (Pragati Maidan)</strong> — Living craft village; artisans in residence demonstrating traditional crafts. <strong>Indira Gandhi Memorial Museum</strong> — Teen Murti Bhavan; PM residence turned museum. <strong>Rajghat and Museums</strong> — Gandhi Smriti (Birla House, where Gandhi was assassinated), National Gandhi Museum. <strong>National Rail Museum</strong> — Chanakyapuri; vintage locomotives and royal saloons. <strong>Nehru Planetarium (Teen Murti)</strong> — Daily shows on astronomy. <strong>Dilli Haat</strong> — Not a museum, but an open-air crafts market representing all Indian states; entry ₹30.
+      </div>
+      <div class="topic-tags"><span class="ttag">National Museum</span><span class="ttag">NGMA</span><span class="ttag">Gandhi Smriti</span><span class="ttag">Rail Museum</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">🌳</span> Parks & Gardens</h3>
+      <div class="topic-body">
+        Delhi's green spaces offer <strong>peaceful respites</strong> in a dense urban environment:<br><br>
+        <strong>Lodi Garden</strong> — 90 acres of manicured lawns with Lodi and Sayyid dynasty tombs (15th century); popular for morning walks, yoga, and picnics. <strong>Mughal Garden / Amrit Udyan (Rashtrapati Bhavan)</strong> — Open to public Jan–Mar; 15 acres of Mughal-style terraced gardens with 10,000 roses. <strong>Deer Park (Hauz Khas)</strong> — Home to spotted deer, peacocks, and the medieval Hauz Khas reservoir. <strong>Garden of Five Senses (Said-ul-Ajaib)</strong> — Themed garden with sculptures, food court, and herb sections; entry ₹35. <strong>Sanjay Van</strong> — A 782-acre forest reserve with walking paths. <strong>Nehru Park (Chanakyapuri)</strong> — Diplomat zone; well-maintained and peaceful. <strong>Central Ridge Reserved Forest</strong> — 864 acres of original Delhi Ridge ecosystem. <strong>Roshanara Bagh</strong> — Mughal garden built 1650 by Aurangzeb's sister; North Delhi's hidden gem.
+      </div>
+      <div class="topic-tags"><span class="ttag">Lodi Garden</span><span class="ttag">Amrit Udyan</span><span class="ttag">Deer Park</span><span class="ttag">Sanjay Van</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">📸</span> Photography Spots</h3>
+      <div class="topic-body">
+        Delhi is a <strong>photographer's paradise</strong> — from ancient ruins to neon-lit markets:<br><br>
+        <strong>Humayun's Tomb at Sunrise</strong> — The dome glows golden, gardens are empty. Best before 7 AM. <strong>Jama Masjid Steps at Sunset</strong> — The courtyard fills with warm light; pigeons circle the minarets. <strong>Chandni Chowk Morning Rush</strong> — Rickshaws, spice sacks, flower sellers — pure street photography gold. <strong>India Gate at Night</strong> — Illuminated against the dark sky, surrounded by families picnicking. <strong>Agrasen ki Baoli</strong> — Geometry of descending steps and arches makes perfect architectural shots. <strong>Lodi Garden Winter Mornings</strong> — Mist around ancient tombs, joggers and birds. <strong>Firoz Shah Kotla Ruins</strong> — Moody gothic atmosphere, especially on Thursday evenings with candles and offerings. <strong>Metro Bridges at Blue Hour</strong> — Delhi Metro elevated sections over traffic make striking urban photos. <strong>Dilli Haat</strong> — Colourful crafts and artisans in action.
+      </div>
+      <div class="topic-tags"><span class="ttag">Sunrise Shots</span><span class="ttag">Street Photography</span><span class="ttag">Architecture</span><span class="ttag">Night Photography</span></div>
+    </div>
+
+    <div class="topic-card ch-tourist-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">🚗</span> Weekend Outing Ideas</h3>
+      <div class="topic-body">
+        Delhi's location makes it the <strong>perfect base for weekend escapes</strong>:<br><br>
+        <strong>Agra (200 km, 3 hrs)</strong> — Taj Mahal, Agra Fort, Fatehpur Sikri; ideal day trip by Gatimaan Express. <strong>Jaipur (280 km, 4 hrs)</strong> — Pink City; Amber Fort, Hawa Mahal, City Palace. <strong>Rishikesh (240 km, 5 hrs)</strong> — Yoga, white water rafting, camping on the Ganga. <strong>Mussoorie (290 km, 6 hrs)</strong> — Hill station; Kempty Falls, Landour, Gun Hill. <strong>Mathura & Vrindavan (150 km, 2.5 hrs)</strong> — Krishna's birthplace; temples and festivals year-round. <strong>Corbett National Park (250 km, 5 hrs)</strong> — India's oldest national park; Bengal tigers, jeep safaris. <strong>Neemrana (122 km, 2 hrs)</strong> — 15th-century stepwell palace; zipline over the Aravalli hills. <strong>Sariska Tiger Reserve (200 km, 3 hrs)</strong> — Fewer tourists than Corbett, equally exciting wildlife. Best weekend routes: NH-48 (Jaipur), NH-9 (Agra), NH-58 (Rishikesh).
+      </div>
+      <div class="topic-tags"><span class="ttag">Agra</span><span class="ttag">Jaipur</span><span class="ttag">Rishikesh</span><span class="ttag">Weekend Trips</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-div">· · · ·</div>
+
+<!-- ═══════════ 4. AREA GUIDES ═══════════ -->
+<div class="chapter" id="area">
+  <div class="chapter-banner ch-area">
+    <div class="chapter-banner-icon">🧭</div>
+    <div class="chapter-banner-text">
+      <h2>Area Guides</h2>
+      <p>Neighbourhood by neighbourhood — shopping, dining, Metro and more</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">🏛️</span> Connaught Place Guide</h3>
+      <div class="topic-body">
+        <strong>Connaught Place (CP)</strong> — officially Rajiv Chowk — is Delhi's iconic circular commercial hub, designed by British architect <strong>Robert Tor Russell</strong> in the 1930s in Georgian/Regency style. Three concentric rings of colonnaded shops form the Inner, Middle, and Outer Circles, connected by radial roads.<br><br>
+        CP hosts Delhi's <strong>grandest mix</strong> of colonial-era cafés (United Coffee House, 1942), international brands, government offices, multiplexes, and underground markets. <strong>Palika Bazaar</strong> — an underground shopping market offering electronics, clothing, and pirated goods. <strong>Janpath Market</strong> — Open-air bazaar with Tibetan craft items, handicrafts, and vintage. The famous <strong>REGAL Cinema building</strong> (closed but iconic). Notable restaurants: Kwality (1940s), Rodeo, Saravana Bhavan. The area's underground <strong>Rajiv Chowk Metro Station</strong> is India's busiest, serving Yellow and Blue lines. Best for: branded shopping, dining, late-night café culture, people-watching.
+      </div>
+      <div class="topic-tags"><span class="ttag">Rajiv Chowk Metro</span><span class="ttag">Palika Bazaar</span><span class="ttag">1930s</span><span class="ttag">CP</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🕌</span> Chandni Chowk Guide</h3>
+      <div class="topic-body">
+        <strong>Chandni Chowk</strong> — built 1650 by Jahanara Begum — is one of South Asia's <strong>oldest and busiest markets</strong>. The 1.5-km main street has been divided into specialty bazaars for centuries: <strong>Khari Baoli</strong> (spices, Asia's largest wholesale spice market), <strong>Kinari Bazaar</strong> (wedding accessories, zari, and tinsel), <strong>Dariba Kalan</strong> (silver and gold jewellery since Mughal times), <strong>Chawri Bazaar</strong> (paper, stationery, wedding cards), <strong>Nai Sarak</strong> (books and textbooks), <strong>Fatehpuri Mosque end</strong> (dry fruits and spices).<br><br>
+        Recent revamp (2018–2021) added a pedestrianised stretch from Red Fort to Fatehpuri Mosque. Major landmarks: Red Fort, Jama Masjid, Gauri Shankar Temple, Sis Ganj Gurudwara (a Sikh shrine marking Guru Teg Bahadur's martyrdom). <strong>Best time:</strong> Weekday mornings 9 AM–12 PM before crowds peak.
+      </div>
+      <div class="topic-tags"><span class="ttag">Khari Baoli</span><span class="ttag">Dariba Kalan</span><span class="ttag">1650</span><span class="ttag">Jama Masjid</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">🏡</span> Hauz Khas Guide</h3>
+      <div class="topic-body">
+        <strong>Hauz Khas</strong> is Delhi's most eclectic neighbourhood — a medieval complex of a 13th-century reservoir, Feroz Shah Tughlaq's madrasa and tomb, and a deer park, surrounded by one of Delhi's trendiest urban villages.<br><br>
+        <strong>Hauz Khas Village (HKV)</strong> — Narrow lanes of boutique fashion shops, art galleries, design studios, rooftop cafés, and bars carved into and around the ancient structures. The contrast of Tughlaq-era ruins and modern nightlife is surreal. <strong>Hauz Khas Fort & Lake</strong> — Built 1352; the fort and madrasa overlook the reservoir (hauz = tank, khas = royal). <strong>Deer Park</strong> — Peaceful 70-acre park with spotted deer, blackbuck, and peacocks; ideal for morning walks. <strong>Shopping:</strong> Independent designer labels, handloom fabric, indie jewellery, and global streetwear. <strong>Eating:</strong> Social (rooftop bar with panoramic views), Yeti (Himalayan food), Naivedyam (South Indian). Metro: Yellow Line, Hauz Khas Station.
+      </div>
+      <div class="topic-tags"><span class="ttag">HKV</span><span class="ttag">Tughlaq Ruins</span><span class="ttag">Rooftop Cafés</span><span class="ttag">Deer Park</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🛍️</span> Saket Guide</h3>
+      <div class="topic-body">
+        <strong>Saket</strong> is South Delhi's premier <strong>upscale residential and commercial hub</strong>, anchored by two of Delhi's best malls: <strong>Select Citywalk</strong> and <strong>DLF Place Saket</strong>.<br><br>
+        <strong>Select Citywalk</strong> — Delhi's most popular mall; international brands (Zara, H&M, Uniqlo), gourmet food court, PVR Cinema, and regular pop-up events. <strong>MGF Metropolitan Mall</strong> — adjacent, more budget-friendly. The area also hosts <strong>Saket District Centre</strong> — independent restaurants, the famous SodaBottleOpenerWala (Parsi food), and several rooftop dining options. <strong>Qutub Institutional Area nearby</strong> — Museums, IIT Delhi campus, Deer Park extension. Saket is well-connected: <strong>Saket Metro Station</strong> (Yellow Line) and <strong>Malviya Nagar Metro</strong> (Yellow Line) are both walkable. The neighbourhood is popular with young professionals for its café culture (Starbucks, Costa, Blue Tokai) and weekend brunching scene.
+      </div>
+      <div class="topic-tags"><span class="ttag">Select Citywalk</span><span class="ttag">DLF Place</span><span class="ttag">Yellow Line</span><span class="ttag">South Delhi</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">🧵</span> Karol Bagh Guide</h3>
+      <div class="topic-body">
+        <strong>Karol Bagh</strong> is a densely packed <strong>middle-class shopping paradise</strong> in Central Delhi, known for textiles, bridal wear, electronics, and food. Originally a planned residential colony, it evolved into one of Delhi's most commercially active areas.<br><br>
+        <strong>Ajmal Khan Road</strong> — The main shopping street, lined with wedding wear, sarees, lehengas, suits. <strong>Tank Road Market</strong> — Electronics and mobile accessories. <strong>Gaffar Market</strong> — One of Delhi's biggest grey-market mobile phone and electronics bazaars. <strong>Roshan Di Kulfi</strong> — Since 1943; legendary kulfi and falooda. <strong>Nand di Hatti</strong> — Iconic chole bhature spot. <strong>Hotel Broadway and surrounds</strong> — Budget hotels catering to shoppers. Karol Bagh is particularly alive during wedding season (October–February) when its bridal markets hit peak vibrancy. Metro: Green Line and Blue Line, Karol Bagh Station.
+      </div>
+      <div class="topic-tags"><span class="ttag">Bridal Market</span><span class="ttag">Gaffar Market</span><span class="ttag">Textiles</span><span class="ttag">Roshan Di Kulfi</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">🛒</span> Best Shopping Markets</h3>
+      <div class="topic-body">
+        Delhi is a <strong>shopper's dreamland</strong> across every budget:<br><br>
+        <strong>Sarojini Nagar Market</strong> — Delhi's most famous budget fashion market; factory exports and overruns at fraction of MRP. Crowded on weekends. <strong>Lajpat Nagar Central Market</strong> — Ethnic wear, home décor, imitation jewellery, and street food. <strong>Dilli Haat (INA)</strong> — Government-run crafts emporium; all Indian states represented; fixed price, no bargaining. <strong>Janpath & Tibetan Market (CP)</strong> — Handicrafts, silver jewellery, Tibetan artefacts. <strong>Khan Market</strong> — Delhi's poshest market; international brands, bookstores (Bahrisons, The Full Circle), gourmet food. <strong>South Extension (South Ex)</strong> — Mid-to-premium fashion, home décor, electronics. <strong>Chandni Chowk Wholesale Markets</strong> — Wholesale prices on textiles, paper goods, spices, electrical. <strong>Palika Bazaar (CP underground)</strong> — Electronics and clothing at negotiable prices. Best bargains: Sarojini Nagar on weekday mornings.
+      </div>
+      <div class="topic-tags"><span class="ttag">Sarojini Nagar</span><span class="ttag">Dilli Haat</span><span class="ttag">Khan Market</span><span class="ttag">Wholesale</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">🚇</span> Metro Connectivity Guide</h3>
+      <div class="topic-body">
+        <strong>Delhi Metro</strong> is one of the world's largest metro systems, with <strong>391 km of track, 288+ stations, and 12 lines</strong>. It carries over 6 million passengers daily. The network covers Delhi, Gurgaon, Faridabad, Noida, and Ghaziabad.<br><br>
+        <strong>Key Lines:</strong> Yellow Line (Samaypur Badli↔HUDA City Centre, Gurgaon) — covers CP, Chandni Chowk, Hauz Khas, AIIMS. Blue Line (Dwarka↔Noida/Vaishali) — covers CP Rajiv Chowk, Pragati Maidan, Yamuna Bank. Red Line (Shaheed Sthal↔Dilshad Garden). Pink Line (Majlis Park↔Shiv Vihar) — crosses all major lines. <strong>Airport Express Line</strong> — New Delhi to IGI Airport in 20 minutes, ₹60. <strong>Fares:</strong> ₹10–60 depending on distance. <strong>Token or Smart Card:</strong> Smart card gives 10% discount. <strong>Timings:</strong> 5:30 AM–11 PM, extended during festivals. <strong>Tips:</strong> Avoid Yellow and Blue lines 8:30–10:30 AM and 5:30–8 PM; priority seating for women at front coaches.
+      </div>
+      <div class="topic-tags"><span class="ttag">391 km</span><span class="ttag">288 Stations</span><span class="ttag">Airport Express</span><span class="ttag">Smart Card</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">💸</span> Budget Travel Tips</h3>
+      <div class="topic-body">
+        Delhi can be explored on <strong>₹500–800 per day</strong> including food, transport, and entry fees. Here's how:<br><br>
+        <strong>Accommodation:</strong> Paharganj hostels start at ₹250–400/night (dorm). Budget hotels in Karol Bagh: ₹600–1,000/night. OYO Rooms across the city: ₹500–800. <strong>Transport:</strong> Metro is cheapest (₹10–60). DTC buses even cheaper (₹10–25). Auto-rickshaws: insist on meter or use Ola/Uber. Sharing autos near Metro stations: ₹5–15. <strong>Food:</strong> Eat at dhabas and street stalls (₹30–80 per meal). Avoid tourist-oriented restaurants near monuments (3x markup). <strong>Free Attractions:</strong> India Gate, Lodi Garden, Sanjay Van, Nehru Park, all gurudwaras (also offer free langar meals!). <strong>Entry fees:</strong> Most monuments ₹35–40 for Indians. <strong>Pro tips:</strong> Carry a reusable water bottle (water is free at all Metro stations). Visit major sights Tuesday–Friday to avoid weekend crowds.
+      </div>
+      <div class="topic-tags"><span class="ttag">₹500/day</span><span class="ttag">Paharganj</span><span class="ttag">Free Sights</span><span class="ttag">Langar</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">💎</span> Luxury Places in Delhi</h3>
+      <div class="topic-body">
+        Delhi's luxury scene rivals any global capital:<br><br>
+        <strong>Hotels:</strong> The Oberoi (Dr. Zakir Hussain Marg) — consistently ranked among Asia's best. The Imperial (Janpath, 1936) — colonial grandeur with art deco interiors. The Taj Mahal Hotel (Mansingh Road) — Delhi's grande dame since 1978. The Leela Palace (Chanakyapuri) — palace-style opulence near embassies. <strong>Dining:</strong> Indian Accent (The Lodhi Hotel) — India's best restaurant for years running; modern Indian haute cuisine. Bukhara (ITC Maurya) — Renowned for its tandoor and Dal Bukhara, visited by world leaders. Dum Pukht (ITC Maurya) — Slow-cooked Awadhi cuisine in a regal setting. <strong>Shopping:</strong> DLF Emporio (Vasant Kunj) — India's only luxury mall; Gucci, Burberry, Louis Vuitton. <strong>Spas:</strong> The Oberoi Spa, Devaya Spa at The Imperial, Six Senses at the Lodhi.
+      </div>
+      <div class="topic-tags"><span class="ttag">The Oberoi</span><span class="ttag">The Imperial</span><span class="ttag">Indian Accent</span><span class="ttag">DLF Emporio</span></div>
+    </div>
+
+    <div class="topic-card ch-area-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">🍴</span> Best Cafés & Restaurants</h3>
+      <div class="topic-body">
+        Delhi's restaurant scene spans <strong>every cuisine and price point</strong>:<br><br>
+        <strong>Budget:</strong> Sita Ram Diwan Chand (chole bhature, Paharganj), Karim's (Mughlai, Jama Masjid since 1913), Saravana Bhavan (South Indian, multiple). <strong>Mid-range:</strong> The Big Chill (pasta, Khan Market), Mamagoto (Pan-Asian, multiple), Yeti (Himalayan, Hauz Khas), Social (Hauz Khas rooftop). <strong>Premium:</strong> Indian Accent (modern Indian), Bukhara (tandoor), Lavaash by Saby (Armenian-Bengali fusion), Varq at Taj (contemporary Indian). <strong>Cafés:</strong> Blue Tokai (specialty coffee, multiple), Perch (wine and coffee, Khan Market), The Qla (Humayun's Tomb view), Diggin (Anand Lok). <strong>Rooftop dining:</strong> Social Hauz Khas, The Qla, 1911 at The Imperial, Lodi — The Garden Restaurant. <strong>24-hour:</strong> Moolchand Parantha (late nights near flyover), most Paharganj cafés.
+      </div>
+      <div class="topic-tags"><span class="ttag">Karim's</span><span class="ttag">Indian Accent</span><span class="ttag">Blue Tokai</span><span class="ttag">Rooftop</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-div">· · · ·</div>
+
+<!-- ═══════════ 5. EDUCATION ═══════════ -->
+<div class="chapter" id="edu">
+  <div class="chapter-banner ch-edu">
+    <div class="chapter-banner-icon">📚</div>
+    <div class="chapter-banner-text">
+      <h2>Education & Student Zone</h2>
+      <p>Colleges, coaching hubs, scholarships, and student life in India's academic capital</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">🎓</span> Colleges in Delhi</h3>
+      <div class="topic-body">
+        Delhi is home to over <strong>600 colleges and universities</strong>, making it India's largest education hub. Key institutions:<br><br>
+        <strong>Central Universities:</strong> Delhi University (DU, est. 1922), Jawaharlal Nehru University (JNU, est. 1969), Jamia Millia Islamia (est. 1920), Indraprastha University (IPU). <strong>IITs and NITs:</strong> IIT Delhi (Hauz Khas, est. 1961) — ranked consistently in top 200 globally. NIT Delhi (Rohini). <strong>Medical:</strong> AIIMS Delhi — India's premier medical institution; All India Institute of Medical Sciences. MAMC, LHMC, VMMC. <strong>Management:</strong> FMS Delhi, IIM Rohtak, MDI Gurgaon. <strong>Law:</strong> Delhi University Faculty of Law, Jamia Law School, USLLS (GGSIPU). <strong>Arts and Design:</strong> National Institute of Fashion Technology (NIFT), National Institute of Design (NID). <strong>Autonomous:</strong> Lady Shri Ram (LSR), St. Stephen's, Hindu College, Sri Ram College of Commerce (SRCC), Miranda House — consistently ranked India's top women's/liberal arts colleges.
+      </div>
+      <div class="topic-tags"><span class="ttag">IIT Delhi</span><span class="ttag">AIIMS</span><span class="ttag">DU</span><span class="ttag">JNU</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🏫</span> Delhi University Guide</h3>
+      <div class="topic-body">
+        <strong>Delhi University (DU)</strong>, founded in 1922, is one of India's largest and most prestigious universities with over <strong>300,000 enrolled students</strong> across 90 colleges. It operates on a dual-campus model:<br><br>
+        <strong>North Campus</strong> (Civil Lines/Kamla Nagar area) — Administrative hub; Miranda House, Hindu College, St. Stephen's, Kirori Mal College, Hansraj, SRCC, and the iconic Vishwavidyalaya Metro Station. The surrounding Kamla Nagar market is students' go-to for affordable books, food, and shopping. <strong>South Campus</strong> (Dhaula Kuan/South Ex area) — Dyal Singh, Jesus & Mary, Gargi, Venkateshwara College. Hub near Munirka for cheap South Indian food. DU's <strong>CUET (Common University Entrance Test)</strong> replaced percentage-based admissions in 2022. <strong>Cultural events:</strong> Mood Indigo (IIT Bombay-style fests), Antardhvani, Montage (St. Stephen's), Crossroads (Ramjas). The DU experience is inseparable from its addas (hangout spots): North Campus chai tapris, Kamla Nagar market evenings.
+      </div>
+      <div class="topic-tags"><span class="ttag">300k Students</span><span class="ttag">North Campus</span><span class="ttag">SRCC</span><span class="ttag">Miranda House</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">📝</span> Coaching Hubs</h3>
+      <div class="topic-body">
+        Delhi is the <strong>undisputed coaching capital of India</strong> — thousands of students from across the country relocate here every year for competitive exam preparation.<br><br>
+        <strong>Mukherjee Nagar</strong> — UPSC Civil Services coaching hub; dozens of institutes (Vajiram & Ravi, Vision IAS, Drishti IAS, Plutus Academy). Area packed with paying guest accommodations and study cafés. <strong>Old Rajendra Nagar</strong> — UPSC mains and interview preparation; more premium institutes. <strong>Rajendra Place</strong> — Banking exams (IBPS, SBI) and SSC preparation. <strong>Laxmi Nagar</strong> — SSC, banking, and state exams. <strong>Kalu Sarai / Hauz Khas</strong> — IIT-JEE coaching (FIITJEE, Aakash, Allen). <strong>Kingsway Camp</strong> — NDA and defence exam coaching. <strong>Rohini</strong> — Medical entrance (NEET) coaching. Major institutes: Vajiram & Ravi (UPSC), Allen Career (JEE/NEET), Aakash (NEET/JEE), TIME/Career Launcher (MBA), IMS Learning (MBA).
+      </div>
+      <div class="topic-tags"><span class="ttag">UPSC</span><span class="ttag">Mukherjee Nagar</span><span class="ttag">IIT-JEE</span><span class="ttag">NEET</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🏠</span> Student Hostels</h3>
+      <div class="topic-body">
+        Finding affordable and safe accommodation is a <strong>top priority for students</strong> coming to Delhi. Options:<br><br>
+        <strong>University Hostels:</strong> DU provides limited hostel seats — competition is fierce. JNU is famous for its heavily subsidised hostel system (₹10–40/month, a matter of political controversy). AIIMS has hostels for medical students. IIT Delhi has on-campus accommodation for all students. <strong>PG (Paying Guest) Accommodation:</strong> The most common option. Mukherjee Nagar PGs: ₹3,000–8,000/month for a shared room. Kamla Nagar: ₹4,000–10,000. South Delhi (Malviya Nagar, Satya Niketan): ₹5,000–12,000. <strong>Budget hostels:</strong> Backpacker hostels in Paharganj: ₹300–600/night (dorm). <strong>Platforms to find PGs:</strong> NoBroker, 99acres, Housing.com, Facebook groups ("DU PG", "Mukherjee Nagar PG"). <strong>Tips:</strong> Always visit in person before paying. Insist on written rental agreements. Prefer areas on Metro corridors.
+      </div>
+      <div class="topic-tags"><span class="ttag">PG Accommodation</span><span class="ttag">JNU Hostel</span><span class="ttag">Mukherjee Nagar</span><span class="ttag">NoBroker</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">📖</span> Libraries & Study Cafés</h3>
+      <div class="topic-body">
+        Delhi has excellent <strong>public, institutional, and private study spaces</strong>:<br><br>
+        <strong>National Library — not in Delhi (Kolkata)</strong>. Delhi's equivalent: <strong>Delhi Public Library (SPM Civic Centre)</strong> — largest public library in Delhi; 10 lakh books, newspaper reading rooms, free WiFi. <strong>Indian National Science Academy (INSA) Library</strong> — Research publications. <strong>Parliament Library</strong> — MPs and researchers only. <strong>DU Central Library (North Campus)</strong> — Open to DU students; air-conditioned reading halls. <strong>IGNCA Library (Janpath)</strong> — Art, culture, manuscripts. <strong>Study Cafés (paid):</strong> Café Study Circle (Mukherjee Nagar), The Study (multiple), Prayas Study Point (Old Rajendra Nagar) — 12-hour seats for ₹50–100. <strong>Free Study Spots:</strong> Indira Gandhi National Open University (IGNOU) library, India International Centre reading room (membership required), IIC Annexe (₹1,500/year membership). Best for UPSC: Mukherjee Nagar study cafés; open 4 AM–midnight during peak season.
+      </div>
+      <div class="topic-tags"><span class="ttag">Delhi Public Library</span><span class="ttag">Study Cafés</span><span class="ttag">DU Library</span><span class="ttag">IGNOU</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">📋</span> Government Exam Resources</h3>
+      <div class="topic-body">
+        Delhi is the nerve-centre of <strong>India's government exam ecosystem</strong>. Key resources and information:<br><br>
+        <strong>UPSC (Union Public Service Commission)</strong> — Located on Shahjahan Road, Delhi. Official site: upsc.gov.in. Conducts Civil Services Exam, NDA, CDS, CAPF, IFS. <strong>SSC (Staff Selection Commission)</strong> — Keventers Building, CGO Complex, New Delhi. Site: ssc.nic.in. <strong>IBPS</strong> — Banking exams; IBPS.in. <strong>RBI Grade B</strong> — rbi.org.in. <strong>Delhi Police Recruitment</strong> — delhipolice.nic.in. <strong>DSSSB (Delhi Subordinate Services Selection Board)</strong> — Government jobs in Delhi government departments. Key resources: Drishti IAS YouTube (UPSC), Study IQ, Unacademy UPSC, Vision IAS test series (₹3,000–6,000). <strong>Free resources:</strong> NCERT books (ncertbooks.prashanthellina.com), Mrunal.org, Insights on India. <strong>Newspapers for UPSC:</strong> The Hindu, Indian Express — available at ₹12–15 at any station.
+      </div>
+      <div class="topic-tags"><span class="ttag">UPSC</span><span class="ttag">SSC</span><span class="ttag">DSSSB</span><span class="ttag">IBPS</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">🏆</span> Scholarships</h3>
+      <div class="topic-body">
+        Multiple scholarships are available for <strong>Delhi students and aspirants</strong>:<br><br>
+        <strong>Central Government Schemes:</strong> National Scholarship Portal (NSP) — scholarships.gov.in; PM Scholarship Scheme (PMSS) — ₹36,000/year for wards of ex-servicemen. Central Sector Scholarship — for students above 80th percentile. <strong>Delhi Government Schemes:</strong> Dr. Ambedkar Scholarship (SC/ST students) — ₹5,000–10,000/year. Delhi Government Merit Scholarship — top performers in Class 10/12. Jai Bhim Mukhyamantri Pratibha Vikas Yojana — free coaching for SC/ST UPSC aspirants. <strong>University Specific:</strong> DU Merit Scholarships, JNU need-based fellowships, IITJEE toppers (tuition waiver). <strong>Corporate/NGO:</strong> Tata Scholarship, HDFC Educational Loan Subsidies, BUDDY4STUDY portal aggregates 5,000+ scholarships. <strong>International:</strong> Commonwealth Scholarship (UK), Chevening (UK), DAAD (Germany) — apply from Delhi offices. Apply early — deadlines typically June–September for academic year.
+      </div>
+      <div class="topic-tags"><span class="ttag">NSP</span><span class="ttag">Jai Bhim Yojana</span><span class="ttag">DU Scholarships</span><span class="ttag">BUDDY4STUDY</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">🎉</span> Student Events</h3>
+      <div class="topic-body">
+        Delhi's college circuit has some of <strong>India's most vibrant student festivals</strong>:<br><br>
+        <strong>Crossroads (Ramjas College, DU)</strong> — One of Delhi's oldest college fests; theatre, music, debate. <strong>Montage (St. Stephen's College)</strong> — Prestigious cultural fest; attracts national performers. <strong>Antaragni (IIT Kanpur) / Mood Indigo (IIT Bombay)</strong> — Delhi students participate heavily. <strong>Rendezvous (IIT Delhi)</strong> — Annual techno-cultural fest at IIT Delhi; attracts 30,000+. <strong>Tarang (Venkateshwara College)</strong> — South Campus's leading cultural fest. <strong>Euphoria (Gargi College)</strong> — One of Delhi's biggest women's college festivals. <strong>Engifest (DTU)</strong> — Delhi's massive engineering college tech-fest. <strong>Events calendar:</strong> September–March is peak fest season. <strong>Non-college events:</strong> Sunburn Arena Delhi (music), Delhi Comic Con (Pragati Maidan, December), TEDx DU, Josh Talks Delhi, Startup Delhi events at Worlds of Wonder and DLF Cyberhub.
+      </div>
+      <div class="topic-tags"><span class="ttag">Rendezvous IIT</span><span class="ttag">Comic Con</span><span class="ttag">Fest Season</span><span class="ttag">TEDx</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">💼</span> Internship Opportunities</h3>
+      <div class="topic-body">
+        As India's capital and a major business hub, Delhi-NCR offers <strong>unparalleled internship opportunities</strong> across sectors:<br><br>
+        <strong>Government Internships:</strong> Parliamentary Internship Programme (apply through MPs), NITI Aayog Internship (niti.gov.in), Ministry internships through official portals. Prime Minister's Office internship (highly competitive). <strong>Media:</strong> NDTV, Times of India, Hindustan Times, The Hindu, Indian Express, Wire — all based in Delhi. <strong>NGOs:</strong> Centre for Policy Research (CPR), Pratham, CARE India, Oxfam India (all Delhi). <strong>Startups:</strong> Gurugram and Noida house hundreds of funded startups across fintech, edtech, and logistics. <strong>Think Tanks:</strong> Observer Research Foundation (ORF), India International Centre, IDFC Institute. <strong>Platforms:</strong> Internshala (most popular), LinkedIn, LetsIntern, Unstop (formerly Dare2Compete), AngelList for startups. <strong>Tip:</strong> Cold-email professors at JNU, IIT-D, and DU for research internships — response rate is surprisingly good.
+      </div>
+      <div class="topic-tags"><span class="ttag">NITI Aayog</span><span class="ttag">Internshala</span><span class="ttag">Parliamentary</span><span class="ttag">Gurugram Startups</span></div>
+    </div>
+
+    <div class="topic-card ch-edu-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">🧭</span> Career Guidance</h3>
+      <div class="topic-body">
+        Delhi provides access to <strong>India's best career resources</strong> across every field:<br><br>
+        <strong>Government sector:</strong> UPSC remains the gold standard. Delhi coaching ecosystem gives students direct access to the best faculty. <strong>Private sector:</strong> Delhi-NCR hosts headquarters of major Indian corporates (HCL, Hero, Bajaj, Bharti Airtel, Maruti, Wipro Noida division). <strong>MBA pathways:</strong> FMS Delhi (public), MDI Gurgaon, IMT Ghaziabad — all in NCR, offering top ROI. <strong>Campus Placements:</strong> IIT Delhi placements average ₹20L+ CTC; DU placements at SRCC, Hindu average ₹8–12L. <strong>Career Fairs:</strong> National Career Service (NCS) Melas at Pragati Maidan; ASSOCHAM job fairs. <strong>Freelancing culture:</strong> Delhi's startup and media ecosystem supports thriving freelance economy. <strong>Useful platforms:</strong> LinkedIn Jobs, Naukri.com (HQ in Noida), Indeed, iimjobs.com for management roles. <strong>Free career counselling:</strong> Delhi Government Employment Exchange offices in all districts.
+      </div>
+      <div class="topic-tags"><span class="ttag">UPSC</span><span class="ttag">FMS Delhi</span><span class="ttag">Naukri.com</span><span class="ttag">IIT Placements</span></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-div">· · · ·</div>
+
+<!-- ═══════════ 6. LIFESTYLE ═══════════ -->
+<div class="chapter" id="life">
+  <div class="chapter-banner ch-life">
+    <div class="chapter-banner-icon">🎭</div>
+    <div class="chapter-banner-text">
+      <h2>Lifestyle & Entertainment</h2>
+      <p>Nightlife, festivals, street art, startups — the living pulse of Delhi</p>
+    </div>
+  </div>
+  <div class="topic-grid">
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">01</div>
+      <h3><span class="ticon">🌃</span> Delhi Nightlife</h3>
+      <div class="topic-body">
+        Delhi has one of <strong>India's most vibrant nightlife scenes</strong>, particularly in South and West Delhi:<br><br>
+        <strong>Hauz Khas Village</strong> — The original nightlife hub; bars built into Tughlaq-era ruins with rooftop views. Key spots: Social, Imperfecto, Raasta. <strong>Connaught Place (CP)</strong> — Pubs and bars on K-Block and L-Block: Farzi Café, The Piano Man Jazz Club (Safdarjung), Whisky Samba. <strong>Cyberhub (Gurugram)</strong> — 30+ premium bars and restaurants in a glass tower complex; EDM nights. <strong>Nehru Place / Saket</strong> — Rooftop bars popular with young professionals. <strong>Vasant Vihar & South Extension</strong> — Upscale cocktail bars. <strong>Live Music:</strong> Piano Man Jazz Club (Safdarjung Enclave, best jazz in Delhi), Hard Rock Café (CP), The Habitat (multiple). <strong>Clubs:</strong> Antares (Aerocity), F Bar (The Ashok), Privée (Shangri-La). <strong>Laws:</strong> Alcohol can be served until 1 AM (extended to 3 AM in some zones). Entry age: 25+ at most clubs. Legal drinking age in Delhi: 25.
+      </div>
+      <div class="topic-tags"><span class="ttag">Hauz Khas</span><span class="ttag">Cyberhub</span><span class="ttag">Jazz Club</span><span class="ttag">Social</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">02</div>
+      <h3><span class="ticon">🎊</span> Festivals in Delhi</h3>
+      <div class="topic-body">
+        Delhi celebrates <strong>every Indian festival with extraordinary energy</strong> — and several that are uniquely Delhi:<br><br>
+        <strong>Republic Day (Jan 26)</strong> — Grand parade on Kartavya Path; military tableaux, cultural performances; beats in every heart. <strong>Lohri (Jan 13)</strong> — Bonfires in every colony; the Punjabi harvest festival at its most joyous. <strong>Holi (March)</strong> — Connaught Place, DU campus, and colony parks erupt in colour. Best Holi: Mathura (2.5 hrs) or Braj Holi (Vrindavan). <strong>Diwali (Oct/Nov)</strong> — Old Delhi's Chandni Chowk lit spectacularly; fireworks from rooftops. <strong>Navratri/Durga Puja (Sept/Oct)</strong> — CR Park (Bengali colony) hosts Kolkata-style Durga Puja; one of Delhi's grandest community events. <strong>Eid ul-Fitr</strong> — Jama Masjid area hosts massive morning prayers; Old Delhi festive food peaks. <strong>Delhi International Arts Festival (DIAF)</strong> — Annual October festival across monuments. <strong>Qutub Festival</strong> — Classical music and dance performances at Qutub Minar, November.
+      </div>
+      <div class="topic-tags"><span class="ttag">Republic Day</span><span class="ttag">Durga Puja</span><span class="ttag">Diwali</span><span class="ttag">Qutub Festival</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">03</div>
+      <h3><span class="ticon">👗</span> Fashion & Shopping Culture</h3>
+      <div class="topic-body">
+        Delhi's fashion scene is a <strong>fascinating hybrid of traditional craft and global trends</strong>:<br><br>
+        <strong>Bridal Fashion:</strong> Karol Bagh and Chandni Chowk are South Asia's bridal fashion capitals — lehengas, sherwanis, zari work, and jewellery all clustered together. <strong>Luxury Fashion:</strong> DLF Emporio (Vasant Kunj) — Gucci, Burberry, Armani. Select Citywalk (Saket) — H&M, Zara, Uniqlo. <strong>Street Fashion:</strong> Sarojini Nagar, Lajpat Nagar — export surplus at ₹100–500. <strong>Indie Design:</strong> Hauz Khas Village, Shahpur Jat (Delhi's designer village) — independent Indian designers with international quality. <strong>Handicrafts:</strong> Dilli Haat — all-Indian states represented; handloom, block prints, Madhubani art. <strong>Delhi Fashion Week</strong> (FDCI) — held twice yearly; brings India's fashion industry together at Jawaharlal Nehru Stadium. <strong>Textile Markets:</strong> Gandhi Nagar (Shahdara) — wholesale fabric market; Nehru Place (electronics + clothes).
+      </div>
+      <div class="topic-tags"><span class="ttag">Karol Bagh Bridal</span><span class="ttag">Shahpur Jat</span><span class="ttag">FDCI</span><span class="ttag">Dilli Haat</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">04</div>
+      <h3><span class="ticon">🎨</span> Street Art Locations</h3>
+      <div class="topic-body">
+        Delhi has emerged as <strong>India's street art capital</strong> since the St+Art India Foundation began transforming the city's walls in 2014:<br><br>
+        <strong>Lodhi Art District (Lodhi Colony)</strong> — South Delhi's Lodhi Colony is India's first open-air public art district. Over 50 murals by Indian and international artists on residential buildings; free to walk through, open 24/7. Best murals: Tyler Shields, Martina Merlini, Daku. <strong>Shahpur Jat</strong> — An organic urban village with boutique galleries and street murals alongside designer studios. <strong>Chandni Chowk Lanes</strong> — Amateur and commissioned murals in the galis; protest art near JNU. <strong>Hauz Khas Village</strong> — Walls adorned with indie illustrations. <strong>Jawaharlal Nehru University (JNU)</strong> — Political poster art and murals; a living canvas of dissent and creativity. <strong>Chromepet Lane (near Nehru Place)</strong> — Quirky graffiti and stencil art. <strong>Events:</strong> St+Art Delhi Festival (annual); Kiran Nadar Museum art talks.
+      </div>
+      <div class="topic-tags"><span class="ttag">Lodhi Art District</span><span class="ttag">St+Art India</span><span class="ttag">Shahpur Jat</span><span class="ttag">JNU Art</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">05</div>
+      <h3><span class="ticon">🏛️</span> Political Landmarks</h3>
+      <div class="topic-body">
+        As the <strong>seat of India's democracy</strong>, Delhi is dotted with historically and politically significant sites:<br><br>
+        <strong>Parliament House (Sansad Bhavan)</strong> — The new Parliament building, inaugurated May 28, 2023, built adjacent to the old circular Parliament. Open for tours by arrangement with MPs. <strong>Rashtrapati Bhavan</strong> — Official residence of the President of India; open to public (Amrit Udyan) Jan–March. <strong>Rajghat</strong> — Mahatma Gandhi's cremation site; simple black marble platform on the Yamuna bank; visited by every foreign dignitary. <strong>Shantivana & Vijay Ghat</strong> — Nehru and Lal Bahadur Shastri's memorials nearby. <strong>Jantar Mantar (CP)</strong> — 18th-century astronomical observatory; also Delhi's traditional protest site; home to countless dharnas. <strong>Teen Murti Bhavan</strong> — Jawaharlal Nehru's official residence, now Nehru Memorial Museum. <strong>National War Memorial</strong> — 2019; 25,942 names of soldiers; eternal flame.
+      </div>
+      <div class="topic-tags"><span class="ttag">Parliament</span><span class="ttag">Rajghat</span><span class="ttag">Rashtrapati Bhavan</span><span class="ttag">Jantar Mantar</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">06</div>
+      <h3><span class="ticon">🚀</span> Startup Culture</h3>
+      <div class="topic-body">
+        Delhi-NCR is <strong>India's second-largest startup ecosystem</strong> after Bengaluru, with over 12,000 registered startups and several unicorns:<br><br>
+        <strong>Major Unicorns (HQ in Delhi-NCR):</strong> Zomato (Gurugram, founded 2010), IndiaMart (Noida), PolicyBazaar (Gurugram), PagarBook, Cars24, OYO Rooms (Gurugram), Naukri/Info Edge (Noida, India's first internet company). <strong>Key hubs:</strong> Gurugram (Cyber City, Sector 44) — fintech, edtech; Noida (Sector 62, 63) — IT and software; Aerocity (Delhi) — travel tech. <strong>Incubators & Accelerators:</strong> IIT Delhi's FITT (Foundation for Innovation and Technology Transfer), CIIE.CO (IIM-A's Delhi centre), T-Hub Delhi, GSF Accelerator. <strong>Co-working spaces:</strong> WeWork (Gurugram), Awfis, 91springboard (multiple), Innov8 (Connaught Place). <strong>Events:</strong> TiECon Delhi, Nasscom Product Conclave, India Internet Day, Headstart Delhi. Delhi's proximity to government ministries gives startups in govtech and deeptech a unique advantage.
+      </div>
+      <div class="topic-tags"><span class="ttag">Zomato</span><span class="ttag">OYO</span><span class="ttag">IIT FITT</span><span class="ttag">Gurugram</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">07</div>
+      <h3><span class="ticon">🗂️</span> Local Business Directory</h3>
+      <div class="topic-body">
+        Key business districts and service hubs in Delhi-NCR:<br><br>
+        <strong>Connaught Place (CP)</strong> — Corporate offices, banks, government liaison offices, international airlines. <strong>Nehru Place</strong> — Asia's largest IT hardware market; also has restaurants and shops. <strong>Bhikaji Cama Place</strong> — Mid-size corporate offices. <strong>Aerocity</strong> — Airport zone; international hotels, airlines, logistics. <strong>Cyber City / DLF Phase 2, Gurugram</strong> — MNC headquarters; Google, Microsoft, American Express, IBM. <strong>Noida Expressway (Sector 62–137)</strong> — IT/ITES companies; HCL, Infosys, Tech Mahindra. <strong>Barakhamba Road/Tolstoy Marg</strong> — Financial services, insurance. <strong>Key Chambers:</strong> FICCI (Tansen Marg), CII (Prithviraj Road), ASSOCHAM (Siri Institutional Area). <strong>Wholesale Markets by Trade:</strong> Sadar Bazaar (wholesale general goods), Gandhi Nagar (textiles), Khari Baoli (spices), Kashmere Gate (auto parts), Tilak Nagar (electronics).
+      </div>
+      <div class="topic-tags"><span class="ttag">Nehru Place</span><span class="ttag">Cyber City</span><span class="ttag">FICCI</span><span class="ttag">Aerocity</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">08</div>
+      <h3><span class="ticon">💡</span> "Did You Know?" Facts</h3>
+      <div class="topic-body">
+        <strong>Fascinating facts about Delhi you probably didn't know:</strong><br><br>
+        🔹 Delhi has been the capital of <strong>at least 8 different empires</strong> — more than any other city in the world.<br>
+        🔹 The <strong>Iron Pillar</strong> in the Qutub Complex has not rusted in 1,600 years; scientists still debate why.<br>
+        🔹 <strong>Rajiv Chowk Metro Station</strong> is one of the world's busiest underground stations by footfall.<br>
+        🔹 Delhi has more <strong>trees than human residents</strong> in some Lutyens zones due to a colonial planning mandate.<br>
+        🔹 The <strong>Yamuna floodplain</strong> in Delhi covers 97 sq km — mostly unused — making it one of the world's largest urban floodplains.<br>
+        🔹 Delhi's <strong>air quality</strong> in winter (Nov–Jan) frequently ranks among the world's most polluted — primarily due to crop burning in Punjab/Haryana + traffic + cold air trapping pollution.<br>
+        🔹 <strong>Daryaganj</strong> was once the world's largest second-hand book market (Sunday market), until it moved to Mahila Haat in 2019.<br>
+        🔹 The <strong>Lotus Temple</strong> receives more visitors annually than the Eiffel Tower.
+      </div>
+      <div class="topic-tags"><span class="ttag">Fun Facts</span><span class="ttag">Iron Pillar</span><span class="ttag">Yamuna</span><span class="ttag">Metro</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">09</div>
+      <h3><span class="ticon">🖼️</span> Delhi Photo Gallery</h3>
+      <div class="topic-body">
+        Delhi's visual richness makes it one of the <strong>world's most photogenic cities</strong>. Here's a guided visual journey:<br><br>
+        <strong>Dawn: Jama Masjid</strong> — The first azaan echoes across Old Delhi; mist rises over the rooftops. <strong>Morning: Chandni Chowk</strong> — Milk carts, flower vendors, and rickshaws create a timeless tableau. <strong>Midday: Humayun's Tomb</strong> — The dome glows against a blue sky; charbagh geometry is perfect for architecture photography. <strong>Afternoon: Qutub Minar</strong> — The minaret casts dramatic shadows on surrounding ruins. <strong>Sunset: Lodi Garden</strong> — Golden hour turns the Tughlaq and Sayyid tombs amber; parakeets circle. <strong>Blue Hour: India Gate</strong> — The arch illuminated against deepening blue; families picnic in silhouette. <strong>Night: Hauz Khas Village</strong> — Reflections on the reservoir; lights from rooftop cafés shimmer. Annual events for photography: Republic Day parade (January), Diwali fireworks from rooftops, Holi colour celebrations, CR Park Durga Puja pandals (October).
+      </div>
+      <div class="topic-tags"><span class="ttag">Photography Guide</span><span class="ttag">Golden Hour</span><span class="ttag">Architecture</span><span class="ttag">Festivals</span></div>
+    </div>
+
+    <div class="topic-card ch-life-card">
+      <div class="topic-num">10</div>
+      <h3><span class="ticon">🌤️</span> Weather & Pollution Updates</h3>
+      <div class="topic-body">
+        Delhi's climate is <strong>extreme and dramatic</strong> — one of the world's most temperature-variable capitals:<br><br>
+        <strong>Winter (Nov–Feb):</strong> Temperatures: 4°C–20°C. Dense fog grips the city December–January, disrupting flights and trains. Cold waves from the Himalayas can drop temperatures to 1–2°C. <strong>Spring (March–April):</strong> Perfect weather, 20°C–32°C. Best time to visit. <strong>Summer (May–June):</strong> Brutal; 40°C–48°C. Hot, dry "loo" winds blow from the west. <strong>Monsoon (July–September):</strong> Humidity soars; 28°C–38°C. Heavy rains, waterlogging, and flooding in low-lying areas. <strong>Air Quality:</strong> November is the worst month — crop burning + Diwali firecrackers + cold air = AQI often 400–500+ (Hazardous). GRAP (Graded Response Action Plan) triggers construction bans and school closures. <strong>Resources:</strong> IQAir.com, SAFAR India (safar.nic.in), AQI India app for real-time monitoring. <strong>Tip:</strong> Carry N95 masks November–January. Best months: February–April and September–October.
+      </div>
+      <div class="topic-tags"><span class="ttag">AQI</span><span class="ttag">Winter Fog</span><span class="ttag">SAFAR</span><span class="ttag">Best Time: Feb–Apr</span></div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand"><span>⚡</span>ThunderStudy Delhi</div>
+        <p class="footer-desc">Your complete knowledge hub for Delhi's culture, heritage, food, education, and lifestyle. 60 in-depth topics written for every student, traveller, and Delhiite.</p>
+        <a href="https://wondermayank.github.io" target="_blank" class="btn-p" style="font-size:.8rem;padding:8px 18px;">Visit WonderMayank ↗</a>
+      </div>
+      <div class="f-col">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#history">🏛️ History & Heritage</a></li>
+          <li><a href="#food">🍢 Food Guide</a></li>
+          <li><a href="#tourist">🗺️ Tourist Places</a></li>
+          <li><a href="#area">🧭 Area Guides</a></li>
+          <li><a href="#edu">📚 Student Zone</a></li>
+          <li><a href="#life">🎭 Lifestyle</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://wondermayank.github.io" target="_blank">WonderMayank</a></li>
+          <li><a href="https://commercesehoga.github.io/dashboard" target="_blank">CBT Mock Platform</a></li>
+          <li><a href="https://wondermayank.github.io/terms" target="_blank">Terms of Use</a></li>
+          <li><a href="https://wondermayank.github.io/privacy" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://wondermayank.github.io/disclaimer" target="_blank">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="https://wondermayank.github.io/contact" target="_blank">Contact Owner</a></li>
+          <li><a href="https://commercesehoga.github.io/help" target="_blank">Donate / Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ThunderStudy Delhi · 60 Topics · 6 Sections · Built for every learner</span>
+      <span>Made with ⚡ by <a href="https://wondermayank.github.io" target="_blank">WonderMayank</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Active nav link on scroll
+const chapters = document.querySelectorAll('.chapter');
+const navLinks = document.querySelectorAll('.nav-cats a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  chapters.forEach(ch => {
+    if (window.scrollY >= ch.offsetTop - 100) current = ch.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

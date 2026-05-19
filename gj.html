@@ -468,6 +468,54 @@
   align-items:center;
 }
 
+  /* HERO DESKTOP LAYOUT */
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  width:100%;
+  max-width:1300px;
+}
+
+/* LEFT SIDE */
+.hero-left{
+  flex:1;
+  text-align:left;
+}
+
+/* RIGHT SIDE */
+.hero-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-right svg{
+  width:420px;
+  height:auto;
+  filter: drop-shadow(0 10px 35px rgba(33,150,243,0.25));
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+  }
+
+  .hero-left{
+    text-align:center;
+  }
+
+  .hero-right svg{
+    width:180px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -500,10 +548,26 @@
   <span class="hero-kite">🪁</span>
 
   <div class="hero-badge">⚡ Thunderstudy — Gujarat Series</div>
-  <h1>Jewel of<br>the West</h1>
-  <p class="hero-sub">A deep-dive into Gujarat — its culture, cuisine, temples, cities, festivals, and the entrepreneurial spirit that drives the nation.</p>
+<div class="hero-content">
 
-<div class="gujarat-map">
+  <!-- LEFT -->
+  <div class="hero-left">
+
+    <h1>
+      Jewel of<br>
+      the West
+    </h1>
+
+    <p class="hero-sub">
+      A deep-dive into Gujarat — its culture, cuisine, temples, cities, festivals, and the entrepreneurial spirit that drives the nation.
+    </p>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+
+    <div class="gujarat-map">
   <svg
    width="1173.3453"
    height="931.03998"
@@ -1498,6 +1562,10 @@
      id="path100946"
      sodipodi:nodetypes="ccc" />
 </svg>
+</div>
+        </div>
+  </div>
+
 </div>
 
   <div class="hero-stats">

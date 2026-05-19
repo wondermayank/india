@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThunderStudy — Rajasthan Complete Guide by Wondermayank</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #1565C0;
+    --gold-light: #1976D2;
+    --gold-dark: #0D47A1;
+    --saffron: #1976D2;
+    --saffron-light: #42A5F5;
+    --maroon: #0D47A1;
+    --maroon-light: #1565C0;
+    --sand: #1A237E;
+    --sand-deep: #283593;
+    --turquoise: #0277BD;
+    --turquoise-light: #0288D1;
+    --indigo: #1565C0;
+    --dark: #F0F7FF;
+    --dark-2: #FFFFFF;
+    --dark-3: #E3F2FD;
+    --text-light: #0D1B2A;
+    --text-muted: #37598A;
+    --white: #FFFFFF;
+    --accent: #1565C0;
+    --accent-soft: #BBDEFB;
+    --border: #90CAF9;
+    --page-bg: #EBF4FF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--page-bg);
+    color: var(--text-light);
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(21,101,192,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(66,165,245,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(13,71,161,0.07) 0%, transparent 50%),
+      linear-gradient(160deg, #FFFFFF 0%, #E3F2FD 40%, #BBDEFB 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231565C0' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .thunder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(21,101,192,0.10);
+    border: 1px solid rgba(21,101,192,0.35);
+    color: #1565C0;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 70%, #0D47A1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.9s ease;
+  }
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: #1976D2;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+  }
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: #37598A;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 1.1s ease;
+  }
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1.2s ease;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1565C0;
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #37598A;
+    font-family: 'Space Mono', monospace;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #37598A;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    animation: bounce 2s infinite;
+  }
+  .scroll-arrow { font-size: 1.2rem; }
+
+  /* ─── NAV ─── */
+  nav {
+    background: rgba(26,15,8,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201,136,42,0.2);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav a {
+    display: inline-block;
+    padding: 1rem 1.2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-title span { color: var(--gold); }
+  .section-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--saffron));
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  /* ─── QUICK STATS TABLE ─── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: rgba(201,136,42,0.2);
+    border: 1px solid rgba(201,136,42,0.2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .stat-cell {
+    background: var(--dark-2);
+    padding: 1.5rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .stat-cell:hover { background: var(--dark-3); }
+  .stat-cell-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-cell-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ─── DISTRICT CLOUD ─── */
+  .district-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+  }
+  .district-tag {
+    background: rgba(201,136,42,0.1);
+    border: 1px solid rgba(201,136,42,0.25);
+    color: var(--sand);
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    padding: 5px 14px;
+    border-radius: 100px;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .district-tag:hover {
+    background: rgba(201,136,42,0.25);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  /* ─── SYMBOLS TABLE ─── */
+  .symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .symbol-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .symbol-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .symbol-icon { font-size: 2.5rem; flex-shrink: 0; }
+  .symbol-name { font-size: 0.7rem; color: var(--text-muted); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 1px; }
+  .symbol-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--sand); margin-top: 2px; }
+
+  /* ─── CULTURE CARDS ─── */
+  .culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .culture-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .culture-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--saffron));
+  }
+  .culture-card:hover { transform: translateY(-4px); border-color: rgba(201,136,42,0.4); }
+  .culture-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .culture-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+  }
+  .culture-card-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 8px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(201,136,42,0.2);
+  }
+  .timeline-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--saffron);
+    letter-spacing: 2px;
+    margin-bottom: 0.4rem;
+  }
+  .timeline-event {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-detail { font-size: 0.95rem; color: var(--text-muted); }
+
+  /* ─── FOOD CARDS ─── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .food-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .food-card:hover { transform: translateY(-3px); border-color: rgba(201,136,42,0.3); }
+  .food-card-top {
+    background: linear-gradient(135deg, var(--dark-3), rgba(232,99,26,0.15));
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .food-card-body { padding: 1rem 1.25rem; }
+  .food-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--sand);
+    margin-bottom: 4px;
+  }
+  .food-card-origin { font-size: 0.75rem; color: var(--saffron); font-family: 'Space Mono', monospace; margin-bottom: 6px; }
+  .food-card-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* ─── PLACES ─── */
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .place-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.25s;
+    position: relative;
+  }
+  .place-card:hover { border-color: rgba(201,136,42,0.4); transform: translateY(-3px); }
+  .place-badge {
+    display: inline-block;
+    background: rgba(201,136,42,0.15);
+    color: var(--gold);
+    font-size: 0.65rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(201,136,42,0.3);
+    margin-bottom: 1rem;
+  }
+  .place-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 0.25rem;
+  }
+  .place-card-district { font-size: 0.75rem; color: var(--saffron); font-family: 'Space Mono', monospace; margin-bottom: 0.75rem; }
+  .place-card-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ─── TRIBE CARDS ─── */
+  .tribe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .tribe-card {
+    background: linear-gradient(135deg, var(--dark-2), rgba(123,29,46,0.15));
+    border: 1px solid rgba(181,57,79,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.25s;
+  }
+  .tribe-card:hover { border-color: rgba(181,57,79,0.5); transform: translateY(-3px); }
+  .tribe-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--saffron-light);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ─── CRAFT CARDS ─── */
+  .craft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .craft-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.25s;
+  }
+  .craft-card:hover { border-color: rgba(201,136,42,0.35); transform: translateY(-3px); }
+  .craft-card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .craft-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+  }
+  .craft-card-gi {
+    display: inline-block;
+    background: rgba(26,123,123,0.2);
+    color: var(--turquoise-light);
+    font-size: 0.65rem;
+    font-family: 'Space Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(74,171,171,0.3);
+  }
+
+  /* ─── EDUCATION ─── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .edu-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(44,62,122,0.4);
+    border-radius: 10px;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .edu-card:hover { border-color: rgba(44,62,122,0.8); background: rgba(44,62,122,0.15); color: var(--text-light); }
+
+  /* ─── FACTS ─── */
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    counter-reset: fact;
+  }
+  .fact-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    counter-increment: fact;
+    transition: all 0.25s;
+  }
+  .fact-card:hover { border-color: rgba(201,136,42,0.35); }
+  .fact-card::before {
+    content: counter(fact, decimal-leading-zero);
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(201,136,42,0.1);
+    line-height: 1;
+  }
+  .fact-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+  }
+  .fact-card-text { font-size: 0.9rem; color: var(--text-muted); }
+
+  /* ─── CITY GUIDES ─── */
+  .city-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .city-tab {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.2);
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .city-tab.active, .city-tab:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark);
+  }
+  .city-panel { display: none; }
+  .city-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .city-info-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .city-info-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .city-info-value { font-size: 0.95rem; color: var(--text-light); }
+
+  /* ─── FESTIVALS ─── */
+  .festivals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .festivals-table th {
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(201,136,42,0.2);
+  }
+  .festivals-table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(201,136,42,0.07);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+  .festivals-table tr:hover td { background: rgba(201,136,42,0.04); color: var(--text-light); }
+  .festivals-table td:first-child { color: var(--gold); font-family: 'Space Mono', monospace; font-size: 0.8rem; white-space: nowrap; }
+  .festivals-table td:nth-child(2) { color: var(--sand); font-family: 'Playfair Display', serif; font-size: 1rem; }
+
+  /* ─── PERSONALITY TABLE ─── */
+  .personality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .person-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: all 0.2s;
+  }
+  .person-card:hover { border-color: rgba(201,136,42,0.35); transform: translateY(-2px); }
+  .person-emoji { font-size: 2rem; flex-shrink: 0; }
+  .person-field {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 3px;
+  }
+  .person-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--sand); margin-bottom: 3px; }
+  .person-desc { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ─── SCHOLARSHIP TABLE ─── */
+  .scholarship-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .scholarship-table th {
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--saffron);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(201,136,42,0.2);
+  }
+  .scholarship-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(201,136,42,0.07);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+  .scholarship-table tr:hover td { background: rgba(201,136,42,0.04); }
+  .scholarship-table td:first-child { color: var(--sand); }
+  .scholarship-table td:nth-child(3) { color: var(--gold); font-family: 'Space Mono', monospace; }
+
+  /* ─── PLATFORMS ─── */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .platform-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+  }
+  .platform-card:hover { border-color: var(--gold); background: rgba(201,136,42,0.08); transform: translateY(-2px); }
+  .platform-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .platform-card-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold-light); margin-bottom: 3px; }
+  .platform-card-url { font-size: 0.75rem; color: var(--text-muted); font-family: 'Space Mono', monospace; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark-2);
+    border-top: 1px solid rgba(201,136,42,0.15);
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  footer strong { color: var(--gold); }
+
+  /* ─── FULL-WIDTH BAND ─── */
+  .band {
+    background: rgba(201,136,42,0.06);
+    border-top: 1px solid rgba(201,136,42,0.1);
+    border-bottom: 1px solid rgba(201,136,42,0.1);
+    padding: 1rem 2rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .scrolling-text {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+  }
+
+  /* ─── SWEETS ─── */
+  .sweets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .sweet-card {
+    background: linear-gradient(135deg, var(--dark-2), rgba(232,99,26,0.08));
+    border: 1px solid rgba(232,99,26,0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .sweet-card:hover { border-color: var(--saffron); transform: translateY(-2px); }
+  .sweet-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .sweet-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--saffron-light); margin-bottom: 4px; }
+  .sweet-city { font-size: 0.7rem; color: var(--text-muted); font-family: 'Space Mono', monospace; }
+
+  /* ─── BLOCKQUOTE ─── */
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(201,136,42,0.06);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: var(--sand);
+    font-size: 1.1rem;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    section { padding: 3rem 1.25rem; }
+    .hero { padding: 3rem 1.25rem; }
+    .tribe-grid, .places-grid { grid-template-columns: 1fr; }
+  }
+
+  .tip-box {
+    background: rgba(26,123,123,0.1);
+    border: 1px solid rgba(74,171,171,0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--turquoise-light);
+  }
+  .tip-box strong { color: var(--turquoise-light); font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .weather-card {
+    background: var(--dark-2);
+    border: 1px solid rgba(201,136,42,0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .weather-card:hover { border-color: rgba(201,136,42,0.3); }
+  .weather-city { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--sand); margin-bottom: 4px; }
+  .weather-temp { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); margin: 8px 0; }
+  .weather-best { font-size: 0.75rem; color: var(--text-muted); font-family: 'Space Mono', monospace; }
+  .weather-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+  .recipe-box {
+    background: var(--dark-2);
+    border: 1px solid rgba(232,99,26,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .recipe-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--saffron-light); margin-bottom: 0.5rem; }
+  .recipe-meta { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 1.5rem; }
+  .recipe-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  @media (max-width: 600px) { .recipe-cols { grid-template-columns: 1fr; } }
+  .recipe-sub { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .recipe-list { list-style: none; }
+  .recipe-list li { color: var(--text-muted); font-size: 0.9rem; padding: 4px 0; border-bottom: 1px solid rgba(201,136,42,0.07); }
+  .recipe-steps { list-style: none; counter-reset: step; }
+  .recipe-steps li { counter-increment: step; color: var(--text-muted); font-size: 0.9rem; padding: 8px 0 8px 2rem; border-bottom: 1px solid rgba(201,136,42,0.07); position: relative; }
+  .recipe-steps li::before { content: counter(step); position: absolute; left: 0; top: 8px; width: 20px; height: 20px; background: var(--gold); color: var(--dark); font-size: 0.7rem; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; }
+
+  .travel-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.9rem; }
+  .travel-table td { padding: 0.9rem 1rem; border-bottom: 1px solid rgba(201,136,42,0.07); }
+  .travel-table td:first-child { color: var(--gold); font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 1px; white-space: nowrap; }
+  .travel-table td:last-child { color: var(--text-muted); }
+  .travel-table tr:hover td { background: rgba(201,136,42,0.04); }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="max-width: none; padding-left: 2rem; padding-right: 2rem;">
+  <div class="thunder-badge">⚡ ThunderStudy by Wondermayank · Updated 2025</div>
+  <h1 class="hero-title">Rajasthan</h1>
+  <p class="hero-subtitle">The Land of Kings</p>
+  <p class="hero-tagline">From the golden dunes of Jaisalmer to the blue streets of Jodhpur — a complete guide to India's most regal state, crafted with love by Wondermayank.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">50</span><span class="hero-stat-label">Districts</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">#1</span><span class="hero-stat-label">Largest State</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3.4 Cr</span><span class="hero-stat-label">Population</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">UNESCO Sites</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">26</span><span class="hero-stat-label">Wildlife Reserves</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3.4L km²</span><span class="hero-stat-label">Area</span></div>
+  </div>
+  <div class="scroll-hint">
+    <span>Explore</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- MARQUEE BAND -->
+<div class="band">
+  <span class="scrolling-text">
+    🏯 Land of Forts &amp; Palaces &nbsp;·&nbsp; 🐪 Desert Safari &nbsp;·&nbsp; 🎭 Ghoomar &amp; Kalbelia &nbsp;·&nbsp; 🍛 Dal Baati Churma &nbsp;·&nbsp; 🌅 Thar Desert &nbsp;·&nbsp; 💎 Jaipur Pink City &nbsp;·&nbsp; 🌊 Udaipur Lake City &nbsp;·&nbsp; 🔵 Jodhpur Blue City &nbsp;·&nbsp; 🌟 Pushkar Camel Fair &nbsp;·&nbsp;
+    🏯 Land of Forts &amp; Palaces &nbsp;·&nbsp; 🐪 Desert Safari &nbsp;·&nbsp; 🎭 Ghoomar &amp; Kalbelia &nbsp;·&nbsp; 🍛 Dal Baati Churma &nbsp;·&nbsp; 🌅 Thar Desert &nbsp;·&nbsp; 💎 Jaipur Pink City &nbsp;·&nbsp; 🌊 Udaipur Lake City &nbsp;·&nbsp; 🔵 Jodhpur Blue City &nbsp;·&nbsp; 🌟 Pushkar Camel Fair &nbsp;·&nbsp;
+  </span>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#quickstats">Stats</a>
+    <a href="#districts">Districts</a>
+    <a href="#culture">Culture</a>
+    <a href="#history">History</a>
+    <a href="#food">Food</a>
+    <a href="#places">Places</a>
+    <a href="#cities">Cities</a>
+    <a href="#religion">Religion</a>
+    <a href="#art">Art</a>
+    <a href="#education">Education</a>
+    <a href="#lifestyle">Lifestyle</a>
+    <a href="#facts">Did You Know</a>
+    <a href="#platforms">Platforms</a>
+  </div>
+</nav>
+
+<!-- ═══ QUICK STATS ═══ -->
+<section id="quickstats">
+  <span class="section-tag">📊 Quick Overview</span>
+  <h2 class="section-title">Rajasthan at a <span>Glance</span></h2>
+  <div class="divider"></div>
+  <div class="stats-grid">
+    <div class="stat-cell"><span class="stat-cell-num">50</span><span class="stat-cell-label">Districts</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">#1</span><span class="stat-cell-label">Largest State</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">3,42,239</span><span class="stat-cell-label">Area (km²)</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">7.95 Cr</span><span class="stat-cell-label">Population (2024 est)</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">7</span><span class="stat-cell-label">Divisions</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">44,672</span><span class="stat-cell-label">Villages</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">3</span><span class="stat-cell-label">UNESCO Sites</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">26</span><span class="stat-cell-label">Wildlife Areas</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">#4</span><span class="stat-cell-label">Tiger Population</span></div>
+    <div class="stat-cell"><span class="stat-cell-num">12 Cr+</span><span class="stat-cell-label">Annual Tourists</span></div>
+  </div>
+
+  <!-- State Symbols -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🔖 State Symbols</h3>
+  <div class="divider"></div>
+  <div class="symbols-grid">
+    <div class="symbol-card"><div class="symbol-icon">🐆</div><div><div class="symbol-name">State Animal</div><div class="symbol-value">Chinkara (Indian Gazelle)</div></div></div>
+    <div class="symbol-card"><div class="symbol-icon">🦢</div><div><div class="symbol-name">State Bird</div><div class="symbol-value">Indian Bustard (Godawan)</div></div></div>
+    <div class="symbol-card"><div class="symbol-icon">🌳</div><div><div class="symbol-name">State Tree</div><div class="symbol-value">Khejri (Prosopis cineraria)</div></div></div>
+    <div class="symbol-card"><div class="symbol-icon">🌸</div><div><div class="symbol-name">State Flower</div><div class="symbol-value">Rohida (Tecomella undulata)</div></div></div>
+    <div class="symbol-card"><div class="symbol-icon">🦋</div><div><div class="symbol-name">State Butterfly</div><div class="symbol-value">Dewan (Southern Birdwing)</div></div></div>
+    <div class="symbol-card"><div class="symbol-icon">🧶</div><div><div class="symbol-name">State Sport</div><div class="symbol-value">Basketball</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ DISTRICTS ═══ -->
+<section id="districts" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🗺️ Administrative Map</span>
+  <h2 class="section-title">All <span>50 Districts</span> of Rajasthan</h2>
+  <div class="divider"></div>
+  <p style="color:var(--text-muted); font-style:italic; margin-bottom:1.5rem;">Rajasthan's 50 districts span 3,42,239 km² across 7 Divisions: Jaipur, Jodhpur, Ajmer, Kota, Bharatpur, Bikaner, Udaipur.</p>
+  <div class="district-cloud">
+    <span class="district-tag">Jaipur</span><span class="district-tag">Jodhpur</span><span class="district-tag">Udaipur</span><span class="district-tag">Kota</span><span class="district-tag">Ajmer</span><span class="district-tag">Bikaner</span><span class="district-tag">Alwar</span><span class="district-tag">Bharatpur</span><span class="district-tag">Jaisalmer</span><span class="district-tag">Sikar</span><span class="district-tag">Pali</span><span class="district-tag">Barmer</span><span class="district-tag">Nagaur</span><span class="district-tag">Jhunjhunu</span><span class="district-tag">Chittorgarh</span><span class="district-tag">Dausa</span><span class="district-tag">Sawai Madhopur</span><span class="district-tag">Dungarpur</span><span class="district-tag">Banswara</span><span class="district-tag">Hanumangarh</span><span class="district-tag">Sriganganagar</span><span class="district-tag">Bundi</span><span class="district-tag">Bhilwara</span><span class="district-tag">Rajsamand</span><span class="district-tag">Sirohi</span><span class="district-tag">Tonk</span><span class="district-tag">Karauli</span><span class="district-tag">Baran</span><span class="district-tag">Dholpur</span><span class="district-tag">Jhalawar</span><span class="district-tag">Churu</span><span class="district-tag">Pratapgarh</span><span class="district-tag">Jalore</span><span class="district-tag">Jalor</span><span class="district-tag">Jodhpur (Rural)</span><span class="district-tag">Anupgarh</span><span class="district-tag">Balotara</span><span class="district-tag">Beawar</span><span class="district-tag">Deeg</span><span class="district-tag">Didwana-Kuchaman</span><span class="district-tag">Dudu</span><span class="district-tag">Gangapur City</span><span class="district-tag">Kekri</span><span class="district-tag">Kotputli-Behror</span><span class="district-tag">Khairthal-Tijara</span><span class="district-tag">Neem ka Thana</span><span class="district-tag">Phalodi</span><span class="district-tag">Salumbar</span><span class="district-tag">Sanchore</span><span class="district-tag">Shahpura</span>
+  </div>
+</section>
+
+<!-- ═══ CULTURE ═══ -->
+<section id="culture" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🎭 Section 1</span>
+  <h2 class="section-title">Culture & <span>Identity</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">Rajasthan's culture is a magnificent tapestry of Rajput chivalry, desert mysticism, vibrant folk arts, and royal grandeur — woven over thousands of years.</p>
+
+  <div class="culture-grid">
+    <div class="culture-card">
+      <div class="culture-card-icon">🗣️</div>
+      <div class="culture-card-title">Languages & Dialects</div>
+      <div class="culture-card-text"><strong style="color:var(--sand)">Official: Hindi & Rajasthani.</strong> Rich regional dialects include <em>Marwari</em> (Jodhpur, Bikaner), <em>Mewari</em> (Udaipur), <em>Dhundhari</em> (Jaipur), <em>Harauti</em> (Kota), <em>Shekhawati</em> (Sikar, Jhunjhunu), <em>Mewati</em> (Alwar), and <em>Wagdi</em> in the tribal belt. Bhili and Garasia are spoken by tribal communities.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">👗</div>
+      <div class="culture-card-title">Clothing Traditions</div>
+      <div class="culture-card-text">Women adorn the <strong style="color:var(--sand)">Ghagra-Choli-Odhni</strong> in brilliant reds, yellows, and greens with heavy silver jewellery. Men wear the iconic <strong style="color:var(--sand)">Dhoti-Kurta with Safa (turban)</strong> — the turban style varies by region and occasion. Tribal women wear the distinctive <em>Phetiya</em> with tattoo traditions.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">🎵</div>
+      <div class="culture-card-title">Music & Dance</div>
+      <div class="culture-card-text"><strong style="color:var(--sand)">Ghoomar</strong> — the royal women's dance of Bhils, now Rajasthan's pride. <strong style="color:var(--sand)">Kalbelia</strong> — UNESCO-listed serpentine dance of the Kalbelia tribe. <strong style="color:var(--sand)">Chari</strong> — Gujjar women's dance with brass pots on fire. <strong style="color:var(--sand)">Bhavai</strong> — acrobatic balancing folk dance. Manganiyar and Langa communities are custodians of desert music traditions.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">🎺</div>
+      <div class="culture-card-title">Musical Instruments</div>
+      <div class="culture-card-text">The <strong style="color:var(--sand)">Ravanahatha</strong> (believed to be ancestor of the violin), <strong style="color:var(--sand)">Morchang</strong> (jaw harp), <strong style="color:var(--sand)">Nagara</strong> (battle drums), <strong style="color:var(--sand)">Bankia</strong> (royal trumpet), <strong style="color:var(--sand)">Khartal</strong> (clappers), and <strong style="color:var(--sand)">Sarangi</strong> form the sonic identity of Rajasthan. The Manganiyar community plays the Kamaycha.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">🏕️</div>
+      <div class="culture-card-title">Tribal Communities</div>
+      <div class="culture-card-text">Major tribes: <strong style="color:var(--sand)">Bhil</strong> (largest — world-famous Phad painting), <strong style="color:var(--sand)">Meena</strong> (warrior tribe of eastern Rajasthan), <strong style="color:var(--sand)">Garasia</strong> (marriage customs unique), <strong style="color:var(--sand)">Kalbelia</strong> (snake charmers, UNESCO dancers), <strong style="color:var(--sand)">Rabari</strong> (nomadic camel herders), <strong style="color:var(--sand)">Sahariya</strong>. They inhabit the Aravalli belt and southern regions.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">💒</div>
+      <div class="culture-card-title">Wedding Traditions</div>
+      <div class="culture-card-text">Rajasthani weddings are grand multi-day affairs: <strong style="color:var(--sand)">Sagai, Mata Puja, Mehendi, Baarat, Phere,</strong> and <strong style="color:var(--sand)">Vidaai</strong>. The groom arrives on a decorated horse (ghodi). Kachori, Gujiya, and Ghewar are traditional ceremony foods. Tribal Garasia weddings feature unique elopement customs called <em>Moru</em>.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🎺 Turban Styles — A Quick Guide</h3>
+  <div class="divider"></div>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:1rem; margin-top:1rem;">
+    <div class="sweet-card"><div class="sweet-icon">🎩</div><div class="sweet-name">Jodhpuri Safa</div><div class="sweet-city">Wide brim · orange-red</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🎩</div><div class="sweet-name">Jaipur Pagdi</div><div class="sweet-city">Pointed top · royal pink</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🎩</div><div class="sweet-name">Marwari Safa</div><div class="sweet-city">Flat top · festive colors</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🎩</div><div class="sweet-name">Mewar Safa</div><div class="sweet-city">White · religious occasion</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🎩</div><div class="sweet-name">Shekhawati Safa</div><div class="sweet-city">Multicolored · tall crown</div></div>
+  </div>
+
+  <!-- Famous Warriors -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">⚔️ Famous Warriors of Rajasthan</h3>
+  <div class="divider"></div>
+  <div class="personality-grid">
+    <div class="person-card"><div class="person-emoji">🏇</div><div><div class="person-field">Mewar Ruler</div><div class="person-name">Maharana Pratap</div><div class="person-desc">Never surrendered to Akbar. Battle of Haldighati, 1576. Symbol of Rajput pride. Born: Kumbhalgarh.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🗡️</div><div><div class="person-field">Mewar Queen</div><div class="person-name">Rani Padmini (Padmavati)</div><div class="person-desc">Legendary queen of Chittorgarh. Led Jauhar in 1303 against Alauddin Khilji.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🏹</div><div><div class="person-field">Marwar Ruler</div><div class="person-name">Rao Jodha</div><div class="person-desc">Founded Jodhpur in 1459. Built the mighty Mehrangarh Fort on a rocky outcrop.</div></div></div>
+    <div class="person-card"><div class="person-emoji">⚔️</div><div><div class="person-field">Freedom Fighter</div><div class="person-name">Veer Durgadas Rathore</div><div class="person-desc">Protected prince Ajit Singh from Aurangzeb for 26 years. Legendary loyalty to Marwar.</div></div></div>
+    <div class="person-card"><div class="person-emoji">👑</div><div><div class="person-field">Amber King</div><div class="person-name">Man Singh I</div><div class="person-desc">Built the famous Man Singh Palace in Amber Fort. Trusted general of Emperor Akbar.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🌹</div><div><div class="person-field">Poetess-Queen</div><div class="person-name">Meerabai</div><div class="person-desc">Mystic poet-saint of Mewar. Devoted to Lord Krishna. Her bhajans are sung across India.</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ HISTORY ═══ -->
+<section id="history" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🏛️ Section 2</span>
+  <h2 class="section-title">History of <span>Rajasthan</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">From the Indus Valley's edge to the British Raj — Rajasthan has been the arena of some of India's most dramatic chapters.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">5000+ YEARS AGO</div>
+      <div class="timeline-event">Indus Valley Connections</div>
+      <div class="timeline-detail">Kalibangan (Hanumangarh) was one of the most significant Indus Valley Civilization cities — featuring the world's earliest known ploughed field and fire altars, dated 2500–1700 BCE.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">~700 BCE – 600 CE</div>
+      <div class="timeline-event">Ancient & Classical Era</div>
+      <div class="timeline-detail">The Matsya Kingdom (Bharatpur region) features in the Mahabharata. Bairat (Viratnagar) was visited by the Pandavas. Rock edicts of Ashoka found at Bairat confirm Mauryan reach.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">7TH – 12TH CENTURY</div>
+      <div class="timeline-event">Rise of Rajput Dynasties</div>
+      <div class="timeline-detail">The Guhilas (later Sisodias) of Mewar, Chahamanas (Ajmer), Paramaras (Mount Abu), and Chandellas established powerful kingdoms. The famous Dilwara Temples of Abu were built by the Solankis (1031 CE) — considered the finest examples of Jain marble architecture.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1303</div>
+      <div class="timeline-event">Siege of Chittorgarh</div>
+      <div class="timeline-detail">Alauddin Khilji besieged Chittorgarh. The legendary Jauhar of Rani Padmini is said to have occurred, with 16,000 women immolating themselves to preserve honour.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1459</div>
+      <div class="timeline-event">Jodhpur Founded</div>
+      <div class="timeline-detail">Rao Jodha of the Rathore clan founded Jodhpur and built Mehrangarh Fort. The majestic fort dominates the skyline to this day, one of India's largest forts.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1527</div>
+      <div class="timeline-event">Battle of Khanwa</div>
+      <div class="timeline-detail">Rana Sanga of Mewar led a grand Rajput confederacy against Babur. The defeat marked the beginning of Mughal dominance, but Rajput resistance continued for centuries.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1576</div>
+      <div class="timeline-event">Battle of Haldighati</div>
+      <div class="timeline-detail">Maharana Pratap of Mewar fought Akbar's forces under Man Singh I at Haldighati. Though the Mughals held the field, Pratap was never captured — continuing guerrilla warfare and recapturing much of Mewar.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1727</div>
+      <div class="timeline-event">Jaipur Founded — The Pink City</div>
+      <div class="timeline-detail">Maharaja Sawai Jai Singh II founded Jaipur — India's first planned city, designed by Vidyadhar Bhattacharya using a grid layout following Vastu Shastra. Now a UNESCO World Heritage City (2019).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1857</div>
+      <div class="timeline-event">First War of Independence</div>
+      <div class="timeline-detail">Taniya Bhil, Rao Ramchandra of Kota, and freedom fighters across Rajputana joined the 1857 uprising. Naseerabad cantonment near Ajmer was one of the first revolts in Rajputana.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">30 March 1949</div>
+      <div class="timeline-event">Formation of Rajasthan</div>
+      <div class="timeline-detail">Through a phased merger of 19 princely states and 3 chiefships (1948–1956), the State of Rajasthan was formed. Jaipur became the capital. Sardar Vallabhbhai Patel orchestrated the integration. It became the country's largest state.</div>
+    </div>
+  </div>
+
+  <!-- Famous Personalities -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🌟 Famous Personalities</h3>
+  <div class="divider"></div>
+  <div class="personality-grid">
+    <div class="person-card"><div class="person-emoji">🎬</div><div><div class="person-field">Bollywood</div><div class="person-name">Dilip Kumar</div><div class="person-desc">Roots in Peshawar, but iconic shoots in Rajasthan. Rajasthan's forts feature in many of his films.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🏏</div><div><div class="person-field">Cricket</div><div class="person-name">Deepak Chahar</div><div class="person-desc">India pacer. Born in Agra but raised in Jaipur. T20I hat-trick hero. RR fan favourite.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🎼</div><div><div class="person-field">Classical Music</div><div class="person-name">Pandit Jasraj</div><div class="person-desc">Legendary Hindustani classical vocalist. Born in Hisar, trained in Rajasthan. Grammy nominee.</div></div></div>
+    <div class="person-card"><div class="person-emoji">✍️</div><div><div class="person-field">Literature</div><div class="person-name">Meerabai</div><div class="person-desc">16th century poet-saint of Chittorgarh. Her devotional bhajans are India's most beloved folk poetry.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🏋️</div><div><div class="person-field">Wrestling</div><div class="person-name">Bajrang Punia</div><div class="person-desc">Olympic bronze medallist wrestler. Born in Jhajjar (Haryana) but represents Rajasthan's wrestling culture.</div></div></div>
+    <div class="person-card"><div class="person-emoji">🎨</div><div><div class="person-field">Painting</div><div class="person-name">Shail Choyal</div><div class="person-desc">Celebrated miniature painting artist from Jaipur. Keeps alive the Rajasthani miniature tradition globally.</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ FOOD ═══ -->
+<section id="food" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🍛 Section 3</span>
+  <h2 class="section-title">Famous <span>Cuisine</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">From Jaipur's world-famous pyaaz kachori to Jaisalmer's ker sangri, Rajasthani food culture is as vast and rich as the Thar Desert.</p>
+
+  <div class="food-grid">
+    <div class="food-card"><div class="food-card-top">🍲</div><div class="food-card-body"><div class="food-card-name">Dal Baati Churma</div><div class="food-card-origin">Across Rajasthan</div><div class="food-card-desc">The quintessential Rajasthani meal — baked wheat balls (baati), five-lentil dal, and sweet churma. Cooked over cow-dung cakes traditionally.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🥘</div><div class="food-card-body"><div class="food-card-name">Laal Maas</div><div class="food-card-origin">Royal Kitchens</div><div class="food-card-desc">Fiery mutton curry in Mathania red chillies and yogurt. Originally a royal hunting dish. Jodhpur's most famous non-veg dish.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🫓</div><div class="food-card-body"><div class="food-card-name">Pyaaz Kachori</div><div class="food-card-origin">Jaipur</div><div class="food-card-desc">Crispy deep-fried pastry stuffed with spiced onion filling. Rawat Mishthan Bhandar in Jaipur is the legendary address.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🥗</div><div class="food-card-body"><div class="food-card-name">Ker Sangri</div><div class="food-card-origin">Jaisalmer, Barmer</div><div class="food-card-desc">Desert beans and berries cooked in dried spices. Classic Marwari vegetarian dish — proof the desert has its own delicacies.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🫕</div><div class="food-card-body"><div class="food-card-name">Gatte ki Sabzi</div><div class="food-card-origin">Bikaner region</div><div class="food-card-desc">Gram flour dumplings simmered in tangy yogurt-based gravy. A Marwari household staple, served with bajra roti.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🥞</div><div class="food-card-body"><div class="food-card-name">Bajre ki Roti</div><div class="food-card-origin">Village Rajasthan</div><div class="food-card-desc">Pearl millet flatbread, eaten with garlic chutney, green chillies, and a dollop of white butter — the soul food of rural Rajasthan.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🍱</div><div class="food-card-body"><div class="food-card-name">Rajasthani Thali</div><div class="food-card-origin">Hotels & Dhabas</div><div class="food-card-desc">A grand spread: 2 rotis, dal, gatte, ker sangri, papad, churma, boondi raita, and mishri-mawa for dessert. Pure vegetarian feast.</div></div></div>
+    <div class="food-card"><div class="food-card-top">🔥</div><div class="food-card-body"><div class="food-card-name">Mirchi Bada</div><div class="food-card-origin">Jodhpur</div><div class="food-card-desc">Large green chillies stuffed with spiced potato, battered and deep-fried. The iconic breakfast snack of Jodhpur's Sardar Market.</div></div></div>
+  </div>
+
+  <!-- Sweets -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🎂 Sweets & Desserts</h3>
+  <div class="divider"></div>
+  <div class="sweets-grid">
+    <div class="sweet-card"><div class="sweet-icon">🍬</div><div class="sweet-name">Ghewar</div><div class="sweet-city">Jaipur · Teej special</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🧁</div><div class="sweet-name">Mawa Kachori</div><div class="sweet-city">Jodhpur</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🍩</div><div class="sweet-name">Feeni</div><div class="sweet-city">Pushkar · Festival sweet</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🍮</div><div class="sweet-name">Moong Dal Halwa</div><div class="sweet-city">Across Rajasthan</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🍡</div><div class="sweet-name">Balu Shahi</div><div class="sweet-city">Bikaner</div></div>
+    <div class="sweet-card"><div class="sweet-icon">🍪</div><div class="sweet-name">Besan Chakki</div><div class="sweet-city">Jaisalmer desert cafes</div></div>
+  </div>
+
+  <!-- Recipe -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🧑‍🍳 Recipe Spotlight — Dal Baati Churma</h3>
+  <div class="divider"></div>
+  <div class="recipe-box">
+    <div class="recipe-title">Dal Baati Churma</div>
+    <div class="recipe-meta">Rajasthani Traditional · Serves 4 · Prep: 30 mins · Cook: 60 mins</div>
+    <div class="recipe-cols">
+      <div>
+        <div class="recipe-sub">Baati Ingredients</div>
+        <ul class="recipe-list">
+          <li>Wheat flour (atta) — 2 cups</li>
+          <li>Semolina (sooji) — ¼ cup</li>
+          <li>Ghee — 4 tbsp</li>
+          <li>Carom seeds (ajwain) — ½ tsp</li>
+          <li>Salt — to taste</li>
+          <li>Water — to knead</li>
+        </ul>
+        <div class="recipe-sub" style="margin-top:1.5rem">Dal Ingredients</div>
+        <ul class="recipe-list">
+          <li>Mixed lentils (5 dals) — 1 cup</li>
+          <li>Tomatoes — 2, chopped</li>
+          <li>Ghee — 3 tbsp</li>
+          <li>Cumin, mustard seeds — 1 tsp each</li>
+          <li>Red chillies, garam masala, turmeric</li>
+        </ul>
+      </div>
+      <div>
+        <div class="recipe-sub">Method</div>
+        <ol class="recipe-steps">
+          <li>Mix atta, sooji, ghee, ajwain, salt. Knead into a stiff dough with water. Divide into lemon-sized balls.</li>
+          <li>Bake baati in a preheated oven at 180°C for 25–30 mins, turning once, until golden and hard.</li>
+          <li>Crack open baati and dip in warm melted ghee.</li>
+          <li>For dal: pressure-cook 5 lentils until soft. Temper with ghee, cumin, mustard seeds, red chillies, tomatoes, and spices.</li>
+          <li>For churma: crush 2 baati, mix with ghee, powdered sugar or jaggery, and cardamom.</li>
+        </ol>
+        <blockquote style="margin-top:1rem; font-size:0.9rem;">💡 Tip: Serve all three together in a traditional Rajasthani thali. The authentic baati is made over charcoal or cowdung cakes for a smoky flavour.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PLACES ═══ -->
+<section id="places" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🗺️ Section 4</span>
+  <h2 class="section-title">Places to <span>Visit</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">Rajasthan has 3 UNESCO sites, 26 wildlife areas, countless forts, palaces, and natural wonders that leave every traveller spellbound.</p>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin-bottom:1rem;">🏯 Forts & Palaces</h3>
+  <div class="places-grid">
+    <div class="place-card"><span class="place-badge">UNESCO · Jaipur</span><div class="place-card-title">Amber Fort</div><div class="place-card-district">📍 Jaipur</div><div class="place-card-text">Perched on a hilltop above Maota Lake, Amber Fort is Rajasthan's most visited monument. A spectacular fusion of Rajput and Mughal architecture, featuring Sheesh Mahal (Mirror Palace), Ganesh Pol gateway, and elephant rides. Built by Maharaja Man Singh I in 1592.</div></div>
+    <div class="place-card"><span class="place-badge">Jodhpur</span><div class="place-card-title">Mehrangarh Fort</div><div class="place-card-district">📍 Jodhpur</div><div class="place-card-text">Rising 125 meters above the Blue City, Mehrangarh is one of India's largest forts. Seven gates, ornate palace chambers, a world-class museum, and a stunning rooftop view of Jodhpur's blue rooftops below. Founded by Rao Jodha in 1459.</div></div>
+    <div class="place-card"><span class="place-badge">Chittorgarh</span><div class="place-card-title">Chittorgarh Fort</div><div class="place-card-district">📍 Chittorgarh</div><div class="place-card-text">UNESCO World Heritage Site. The largest fort in India by area (700 acres). Site of three legendary Jauhars. Towers of Vijay Stambha and Kirti Stambha, Rani Padmini Palace, and temples of Kumbha dot this citadel of sacrifice.</div></div>
+    <div class="place-card"><span class="place-badge">Golden City</span><div class="place-card-title">Jaisalmer Fort</div><div class="place-card-district">📍 Jaisalmer</div><div class="place-card-text">UNESCO listed. One of the world's few living forts — a quarter of Jaisalmer's population still lives inside. Rising from golden sandstone, it glows amber at sunset. Jain temples inside are exquisitely carved. Built in 1156 CE by Rawal Jaisal.</div></div>
+    <div class="place-card"><span class="place-badge">Lake Palace</span><div class="place-card-title">City Palace, Udaipur</div><div class="place-card-district">📍 Udaipur</div><div class="place-card-text">The largest palace complex in Rajasthan. Built over 400 years by successive Mewar rulers. Overlooking Lake Pichola and the famous Lake Palace hotel. Mor Chowk, Crystal Gallery, and Dilkusha Mahal are must-sees.</div></div>
+    <div class="place-card"><span class="place-badge">Shekhawati</span><div class="place-card-title">Mandawa Havelis</div><div class="place-card-district">📍 Jhunjhunu</div><div class="place-card-text">The Shekhawati region is called the "open-air art gallery of Rajasthan." Mandawa, Nawalgarh, and Fatehpur have centuries-old painted havelis with frescoes depicting mythological scenes, British officers, and bazaar life.</div></div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin: 2.5rem 0 1rem;">🌿 Nature & Wildlife</h3>
+  <div class="places-grid">
+    <div class="place-card"><span class="place-badge">Tiger Reserve</span><div class="place-card-title">Ranthambore National Park</div><div class="place-card-district">📍 Sawai Madhopur</div><div class="place-card-text">India's most famous tiger reserve, set against a medieval fort backdrop. Home to 70+ tigers, leopards, sloth bears, marsh crocodiles, and over 300 bird species. Best visited October–June. UNESCO Biosphere Reserve candidate.</div></div>
+    <div class="place-card"><span class="place-badge">Bird Paradise</span><div class="place-card-title">Keoladeo Ghana National Park</div><div class="place-card-district">📍 Bharatpur</div><div class="place-card-text">UNESCO World Heritage Site. A former duck-shooting reserve of the Bharatpur maharajas, now one of Asia's finest bird sanctuaries. Hosts 370+ bird species including the rare Siberian crane. Best from October to March.</div></div>
+    <div class="place-card"><span class="place-badge">Desert</span><div class="place-card-title">Sam Sand Dunes, Thar Desert</div><div class="place-card-district">📍 Jaisalmer</div><div class="place-card-text">The iconic golden dunes of Rajasthan. Camel safaris at sunset, overnight desert camping in luxury tents, folk musicians and dancers under the stars. The Desert Festival is held here every January–February.</div></div>
+    <div class="place-card"><span class="place-badge">Hill Station</span><div class="place-card-title">Mount Abu</div><div class="place-card-district">📍 Sirohi</div><div class="place-card-text">Rajasthan's only hill station, perched at 1722 metres in the Aravalli Range. Nakki Lake, Guru Shikhar peak (1722m), Dilwara Jain Temples, and lush forests make it a refreshing escape from the desert heat.</div></div>
+    <div class="place-card"><span class="place-badge">Flamingo Lake</span><div class="place-card-title">Sambhar Salt Lake</div><div class="place-card-district">📍 Jaipur / Nagaur</div><div class="place-card-text">India's largest inland saltwater lake. A Ramsar Wetland of international importance. Thousands of flamingos, pelicans, and migratory birds descend here in winter. The salt harvesting tradition is centuries old.</div></div>
+    <div class="place-card"><span class="place-badge">Waterfall</span><div class="place-card-title">Chuliya Waterfall</div><div class="place-card-district">📍 Kota</div><div class="place-card-text">A series of waterfalls on the Chambal River near Kota. The Chambal region also hosts the Indian gharial sanctuary and the famous Chambal Safari. Garadia Mahadev viewpoint offers breathtaking gorge views.</div></div>
+  </div>
+
+  <!-- Travel Tips -->
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin: 2.5rem 0 0.5rem;">🗺️ Travel Tips</h3>
+  <div class="divider"></div>
+  <table class="travel-table">
+    <tr><td>🌤️ Best Time to Visit</td><td>October to March (pleasant 10–25°C). Monsoon (July–Sept) makes landscapes green but roads can flood. Avoid May–June (extreme heat up to 50°C).</td></tr>
+    <tr><td>🚂 Rail Hubs</td><td>Jaipur Junction, Jodhpur, Ajmer, Kota, Udaipur, Abu Road, Bikaner — well-connected to Delhi, Mumbai, Kolkata.</td></tr>
+    <tr><td>✈️ Airports</td><td>Jaipur International (largest), Jodhpur, Udaipur (Maharana Pratap), Jaisalmer, Bikaner, Ajmer.</td></tr>
+    <tr><td>🚌 State Transport</td><td>RSRTC (Rajasthan State Road Transport) connects all cities. Luxury Volvo buses between major cities. Metered autos and e-rickshaws in cities.</td></tr>
+    <tr><td>💰 Budget/Day</td><td>Budget ₹800–1500/day · Mid-range ₹2500–5000 · Heritage hotels ₹8000–50,000+</td></tr>
+    <tr><td>🏨 Stay Options</td><td>Luxury heritage havelis and palace hotels (HRH Group, Taj Hotels, Oberoi). Mid-range guesthouses in old cities. Desert camps in Jaisalmer and Bikaner.</td></tr>
+  </table>
+</section>
+
+<!-- ═══ CITIES ═══ -->
+<section id="cities" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🏙️ Section 5</span>
+  <h2 class="section-title">City <span>Guides</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">A local's guide to Rajasthan's major cities — culture, food, transport, shopping, and hidden gems.</p>
+
+  <div class="city-tabs">
+    <div class="city-tab active" onclick="showCity('jaipur', this)">Jaipur</div>
+    <div class="city-tab" onclick="showCity('udaipur', this)">Udaipur</div>
+    <div class="city-tab" onclick="showCity('jodhpur', this)">Jodhpur</div>
+    <div class="city-tab" onclick="showCity('jaisalmer', this)">Jaisalmer</div>
+    <div class="city-tab" onclick="showCity('ajmer', this)">Ajmer</div>
+  </div>
+
+  <div id="city-jaipur" class="city-panel active">
+    <div class="city-info-card"><div class="city-info-label">🏛️ Nickname</div><div class="city-info-value">The Pink City · UNESCO World Heritage City (2019)</div></div>
+    <div class="city-info-card"><div class="city-info-label">🏰 Must See</div><div class="city-info-value">Amber Fort, Hawa Mahal, Jantar Mantar, City Palace, Nahargarh Fort, Birla Temple</div></div>
+    <div class="city-info-card"><div class="city-info-label">🛍️ Markets</div><div class="city-info-value">Johari Bazaar (jewellery), Bapu Bazaar (textiles), Nehru Bazaar, Tripolia Bazaar, Crystal Palm Mall</div></div>
+    <div class="city-info-card"><div class="city-info-label">🍛 Food</div><div class="city-info-value">Rawat's Kachori, Lassiwala Lassi (MI Road), Niro's Restaurant, Thali at Chokhi Dhani</div></div>
+    <div class="city-info-card"><div class="city-info-label">🚌 Transport</div><div class="city-info-value">Metro (two lines), City buses, app cabs. International Airport. Junction station connects to all major cities.</div></div>
+    <div class="city-info-card"><div class="city-info-label">🎓 Education</div><div class="city-info-value">University of Rajasthan, IIT Jodhpur (nearby), SMS Medical College, Malaviya NIT, Rajasthan University</div></div>
+  </div>
+
+  <div id="city-udaipur" class="city-panel">
+    <div class="city-info-card"><div class="city-info-label">🏛️ Nickname</div><div class="city-info-value">City of Lakes · Venice of the East</div></div>
+    <div class="city-info-card"><div class="city-info-label">🏰 Must See</div><div class="city-info-value">Lake Pichola, City Palace, Jagdish Temple, Sajjangarh (Monsoon Palace), Fateh Sagar Lake</div></div>
+    <div class="city-info-card"><div class="city-info-label">🛍️ Markets</div><div class="city-info-value">Hathi Pol (miniatures, block prints), Bara Bazaar, Clock Tower market, Jagdish Chowk</div></div>
+    <div class="city-info-card"><div class="city-info-label">🍛 Food</div><div class="city-info-value">Savage Garden (lake view dining), Ambrai Ghat restaurants, Dal Baati at Natraj Dining Hall</div></div>
+    <div class="city-info-card"><div class="city-info-label">🚌 Transport</div><div class="city-info-value">Maharana Pratap Airport. State buses and private taxis. E-boats on the lake. Autos for city.</div></div>
+    <div class="city-info-card"><div class="city-info-label">✨ Famous For</div><div class="city-info-value">James Bond's Octopussy filmed here. Luxury Lake Palace hotel. Rajput art and miniature tradition.</div></div>
+  </div>
+
+  <div id="city-jodhpur" class="city-panel">
+    <div class="city-info-card"><div class="city-info-label">🏛️ Nickname</div><div class="city-info-value">The Blue City · Sun City</div></div>
+    <div class="city-info-card"><div class="city-info-label">🏰 Must See</div><div class="city-info-value">Mehrangarh Fort, Jaswant Thada, Umaid Bhawan Palace, Balsamand Lake, Mandore Gardens</div></div>
+    <div class="city-info-card"><div class="city-info-label">🛍️ Markets</div><div class="city-info-value">Sardar Market (iconic clock tower), Tripolia Bazaar, Nai Sadak (fabrics). Machiya Biological Park nearby.</div></div>
+    <div class="city-info-card"><div class="city-info-label">🍛 Food</div><div class="city-info-value">Mirchi Bada at Shahi Samosa, Mawa Kachori at Janta Sweet Home, Laal Maas at Gypsy Restaurant</div></div>
+    <div class="city-info-card"><div class="city-info-label">🚌 Transport</div><div class="city-info-value">Jodhpur Airport (domestic). Rail hub connecting Jaipur, Jaisalmer, Mumbai, Delhi. City autos and e-rickshaws.</div></div>
+    <div class="city-info-card"><div class="city-info-label">✨ Famous For</div><div class="city-info-value">Khejri trees, Bishnoi village conservation culture, and the Jodhpuri suit — a global fashion icon.</div></div>
+  </div>
+
+  <div id="city-jaisalmer" class="city-panel">
+    <div class="city-info-card"><div class="city-info-label">🏛️ Nickname</div><div class="city-info-value">The Golden City · Sonar Qila</div></div>
+    <div class="city-info-card"><div class="city-info-label">🏰 Must See</div><div class="city-info-value">Jaisalmer Fort (UNESCO), Patwon ki Haveli, Sam Dunes, Gadisar Lake, Desert National Park</div></div>
+    <div class="city-info-card"><div class="city-info-label">🛍️ Markets</div><div class="city-info-value">Sadar Market (inside fort), Amar Sagar Pol Bazaar. Camelskills for desert handicrafts and leather goods.</div></div>
+    <div class="city-info-card"><div class="city-info-label">🍛 Food</div><div class="city-info-value">Ker Sangri, millet khichdi, desert kheer, rooftop cafes with fort views at Kuku Café and 1st Gate Home Fusion</div></div>
+    <div class="city-info-card"><div class="city-info-label">🚌 Transport</div><div class="city-info-value">Jaisalmer Airport (limited flights). Train from Jodhpur (5 hrs). Overnight bus from Jaipur.</div></div>
+    <div class="city-info-card"><div class="city-info-label">✨ Famous For</div><div class="city-info-value">Satyajit Ray's Sonar Kella (Golden Fortress) film. Desert Festival every January. Living fort.</div></div>
+  </div>
+
+  <div id="city-ajmer" class="city-panel">
+    <div class="city-info-card"><div class="city-info-label">🏛️ Nickname</div><div class="city-info-value">Heart of Rajasthan · Mecca of India</div></div>
+    <div class="city-info-card"><div class="city-info-label">🕌 Must See</div><div class="city-info-value">Ajmer Sharif Dargah (Khwaja Moinuddin Chishti), Ana Sagar Lake, Adhai Din Ka Jhonpra, Taragarh Fort</div></div>
+    <div class="city-info-card"><div class="city-info-label">🛍️ Markets</div><div class="city-info-value">Dargah Bazaar, Naya Bazaar, Agra Gate area. Famous for Zardozi embroidery and rose-water products.</div></div>
+    <div class="city-info-card"><div class="city-info-label">🍛 Food</div><div class="city-info-value">Sohan Halwa, Kachori at Agra Gate, Biryani near Dargah, Malpua at local halwai shops</div></div>
+    <div class="city-info-card"><div class="city-info-label">🚌 Transport</div><div class="city-info-value">Ajmer Junction is a major railway hub. 135 km from Jaipur by road. Pushkar is 14 km away.</div></div>
+    <div class="city-info-card"><div class="city-info-label">✨ Famous For</div><div class="city-info-value">Urs festival at Dargah draws 1 million+ pilgrims. Emperor Akbar and Jahangir visited repeatedly.</div></div>
+  </div>
+</section>
+
+<!-- ═══ RELIGION & FESTIVALS ═══ -->
+<section id="religion" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🕉️ Section 6</span>
+  <h2 class="section-title">Religion & <span>Festivals</span></h2>
+  <div class="divider"></div>
+
+  <div class="culture-grid" style="margin-bottom: 2rem;">
+    <div class="culture-card">
+      <div class="culture-card-icon">🕌</div>
+      <div class="culture-card-title">Ajmer Sharif Dargah</div>
+      <div class="culture-card-text">Shrine of Sufi saint Khwaja Moinuddin Chishti (1141–1230 CE). One of the most visited Islamic pilgrimage sites in the world, drawing people of all faiths. Annual Urs festival sees 1 million+ devotees.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">🐫</div>
+      <div class="culture-card-title">Pushkar Camel Fair</div>
+      <div class="culture-card-text">Asia's largest camel fair held every November (Kartik Purnima). 50,000+ camels, cattle, and horses traded. Surrounded by folk performances, hot air balloons, and the sacred Pushkar Lake ghats. Brahma Temple (only one in India) is nearby.</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-card-icon">⛩️</div>
+      <div class="culture-card-title">Major Temples</div>
+      <div class="culture-card-text"><strong style="color:var(--sand)">Eklingji</strong> (Shiva, Udaipur) · <strong style="color:var(--sand)">Karni Mata</strong> (Bikaner — the rat temple) · <strong style="color:var(--sand)">Ranakpur Jain Temples</strong> · <strong style="color:var(--sand)">Dilwara Temples</strong> (Abu) · <strong style="color:var(--sand)">Brahma Temple, Pushkar</strong> · <strong style="color:var(--sand)">Govind Dev Ji, Jaipur</strong> · <strong style="color:var(--sand)">Salasar Balaji</strong></div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin-bottom:1rem;">🎉 Annual Festival Calendar</h3>
+  <div class="divider"></div>
+  <table class="festivals-table">
+    <thead><tr><th>Month</th><th>Festival</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>January</td><td>Makar Sankranti</td><td>Kite festival across Rajasthan — skies fill with thousands of colourful kites. Jaipur and Jodhpur are most spectacular.</td></tr>
+      <tr><td>Jan–Feb</td><td>Desert Festival, Jaisalmer</td><td>Sam Sand Dunes come alive with folk music, camel races, turban tying contests, and fire dancing against a golden sunset.</td></tr>
+      <tr><td>Feb–Mar</td><td>Elephant Festival, Jaipur</td><td>Holi is celebrated with decorated elephants, polo matches, and processions. The most Instagram-worthy festival in Rajasthan.</td></tr>
+      <tr><td>March–April</td><td>Gangaur Festival</td><td>A 18-day celebration honouring Goddess Gauri (Parvati) by married and unmarried women. Grand processions from City Palace, Jaipur.</td></tr>
+      <tr><td>March</td><td>Holi, Mathania & Nathwara</td><td>Rajasthan's Holi is celebrated with gulal (dry colour), folk music, and festive sweets. Nathwara Holi has age-old traditions.</td></tr>
+      <tr><td>July–August</td><td>Teej, Jaipur</td><td>Women's festival welcoming monsoon. Grand procession with idol of Goddess Teej through the old city. Ghewar is the iconic sweet.</td></tr>
+      <tr><td>October</td><td>Navratri & Dussehra</td><td>Nine nights of Garba and Dandiya dancing. Kota's Dussehra procession and Ravan effigy burning is one of India's grandest.</td></tr>
+      <tr><td>November</td><td>Pushkar Camel Fair</td><td>Asia's largest camel fair and livestock market, ending on Kartik Purnima. Sacred dip in Pushkar Lake at the fair's finale.</td></tr>
+      <tr><td>November</td><td>Diwali in Udaipur</td><td>Udaipur's lakeside Diwali is magical — the City Palace and Lake Pichola are illuminated with thousands of diyas reflected on the water.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ ART & CRAFTS ═══ -->
+<section id="art" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🎨 Section 7</span>
+  <h2 class="section-title">Art, Crafts & <span>Lifestyle</span></h2>
+  <div class="divider"></div>
+  <p class="section-intro">Rajasthan is India's largest repository of traditional crafts — from GI-tagged textiles to UNESCO-listed dance forms.</p>
+
+  <div class="craft-grid">
+    <div class="craft-card">
+      <div class="craft-card-icon">🧵</div>
+      <div class="craft-card-title">Bandhani (Tie-Dye)</div>
+      <div class="craft-card-gi">GI Tagged</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Created by tying tiny knots on fabric before dyeing, producing distinctive dotted patterns in vivid reds, yellows, and greens. Jaipur, Jodhpur, and Bikaner are major centres. Worn at weddings and festivals. Rajasthani Bandhani sarees and dupattas are famous globally.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🖨️</div>
+      <div class="craft-card-title">Bagru & Sanganeri Block Printing</div>
+      <div class="craft-card-gi">GI Tagged</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Two distinct styles — Bagru (earthy tones, resist printing) and Sanganeri (delicate floral on white). Using wooden carved blocks and natural dyes on cotton. UNESCO Craft of Merit. Exported globally. Villages near Jaipur are the craft hubs.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🎨</div>
+      <div class="craft-card-title">Rajasthani Miniature Painting</div>
+      <div class="craft-card-gi">Heritage Craft</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Schools of miniature painting include Mewar (bold), Marwar, Kishangarh (famous for elongated lotus eyes), Bundi, Kotah, and Bikaner. Painted on ivory, cloth, and paper using squirrel-hair brushes and stone-ground pigments. Royal scenes, mythology, and nature are common themes.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🏺</div>
+      <div class="craft-card-title">Blue Pottery of Jaipur</div>
+      <div class="craft-card-gi">GI Tagged</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Distinct turquoise-blue glazed pottery made from a dough of quartz, glass, and Fuller's earth — no clay. Persian origins, brought by Mughal artisans. Jaipur's Kripal Kumbh is a landmark studio. UNESCO Craft of Merit.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🎭</div>
+      <div class="craft-card-title">Kathputli (Puppet Art)</div>
+      <div class="craft-card-gi">Living Tradition</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Traditional string-puppet storytelling by the Bhat community of Rajasthan. Puppets in elaborate costumes enact folk tales of Amar Singh Rathore, Dhola Maru, and other heroes. Jaipur's Kathputli Colony was once home to hundreds of puppet families.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">💎</div>
+      <div class="craft-card-title">Jewellery Traditions</div>
+      <div class="craft-card-gi">Kundan · Meenakari · Thewa</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)"><strong style="color:var(--sand)">Kundan</strong> (gold foil with precious stones) — Jaipur's specialty. <strong style="color:var(--sand)">Meenakari</strong> (enamel work on gold) — brought by Man Singh I from Lahore. <strong style="color:var(--sand)">Thewa</strong> (GI-tagged gold work on glass) — Pratapgarh. Silver jewellery of tribal communities is world-famous.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🪡</div>
+      <div class="craft-card-title">Phad Painting</div>
+      <div class="craft-card-gi">Bhilwara · Tribal Art</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">A narrative scroll painting tradition of the Bhil tribe, depicting the epics of local folk deities Pabuji and Devnarayan. Painted by the Joshi community of Bhilwara on cloth strips. Shri Lal Joshi brought Phad painting to international galleries. UNESCO recognition.</div>
+    </div>
+    <div class="craft-card">
+      <div class="craft-card-icon">🐪</div>
+      <div class="craft-card-title">Camel Leather Crafts</div>
+      <div class="craft-card-gi">Bikaner · Jaisalmer</div>
+      <div class="culture-card-text" style="font-size:0.9rem; color:var(--text-muted)">Bikaner is the centre of camel leather craft — shoes, bags, wallets, and decorative items carved and painted. Jaisalmer's leather artisans produce unique mojari (embroidered sandals) that are popular with tourists and exported globally.</div>
+    </div>
+  </div>
+
+  <!-- Agriculture -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 3rem 0 0.5rem;">🌾 Agriculture</h3>
+  <div class="divider"></div>
+  <blockquote>Rajasthan is India's largest producer of mustard, cumin, isabgol (psyllium husk), and coriander. The state grows bajra (pearl millet), jowar, guar, groundnut, sesame, and cotton. Indira Gandhi Canal has transformed Jaisalmer, Barmer, and Bikaner agriculture. Organic farming is growing in Barmer and Pali. Rajasthan's cumin and coriander supply 80% of India's spice needs.</blockquote>
+
+  <!-- Weather -->
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); margin: 2rem 0 0.5rem;">🌤️ Weather Across Major Cities</h3>
+  <div class="divider"></div>
+  <div class="weather-grid">
+    <div class="weather-card"><div class="weather-icon">☀️</div><div class="weather-city">Jaipur</div><div class="weather-temp">26°C avg</div><div class="weather-best">Best: Oct–Mar · Extreme summer 45°C</div></div>
+    <div class="weather-card"><div class="weather-icon">🌵</div><div class="weather-city">Jaisalmer</div><div class="weather-temp">24°C avg</div><div class="weather-best">Best: Nov–Feb · Desert nights cold</div></div>
+    <div class="weather-card"><div class="weather-icon">🌊</div><div class="weather-city">Udaipur</div><div class="weather-temp">24°C avg</div><div class="weather-best">Best: Oct–Mar · Monsoon is magical</div></div>
+    <div class="weather-card"><div class="weather-icon">💙</div><div class="weather-city">Jodhpur</div><div class="weather-temp">25°C avg</div><div class="weather-best">Best: Oct–Mar · Very hot May–June</div></div>
+    <div class="weather-card"><div class="weather-icon">🌿</div><div class="weather-city">Mount Abu</div><div class="weather-temp">16°C avg</div><div class="weather-best">Best: Jun–Sept (greenest) &amp; Oct–Feb</div></div>
+    <div class="weather-card"><div class="weather-icon">🌡️</div><div class="weather-city">Churu</div><div class="weather-temp">22°C avg</div><div class="weather-best">Extreme: –1°C (winter) to 50°C (summer)</div></div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🎓 Section 8</span>
+  <h2 class="section-title">Education in <span>Rajasthan</span></h2>
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin-bottom:1rem;">🏫 Top Universities & Institutions</h3>
+  <div class="edu-grid">
+    <div class="edu-card">University of Rajasthan, Jaipur</div>
+    <div class="edu-card">IIT Jodhpur</div>
+    <div class="edu-card">IIM Udaipur</div>
+    <div class="edu-card">NIT Jaipur (MNIT)</div>
+    <div class="edu-card">AIIMS Jodhpur</div>
+    <div class="edu-card">SMS Medical College, Jaipur</div>
+    <div class="edu-card">Rajasthan University of Health Sciences</div>
+    <div class="edu-card">Jai Narain Vyas University, Jodhpur</div>
+    <div class="edu-card">MohanLal Sukhadia University, Udaipur</div>
+    <div class="edu-card">Kota University</div>
+    <div class="edu-card">Central University of Rajasthan, Ajmer</div>
+    <div class="edu-card">BITS Pilani (Pilani, Jhunjhunu)</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin: 2.5rem 0 1rem;">📋 Key Government Exams</h3>
+  <div class="district-cloud" style="margin-top:0.5rem">
+    <span class="district-tag">RPSC RAS</span><span class="district-tag">RSMSSB Exams</span><span class="district-tag">Rajasthan Police</span><span class="district-tag">Patwari Exam</span><span class="district-tag">REET (Teacher)</span><span class="district-tag">Rajasthan High Court</span><span class="district-tag">RPSC 1st Grade</span><span class="district-tag">RPSC 2nd Grade</span><span class="district-tag">Junior Engineer (RSMSSB)</span><span class="district-tag">Lab Assistant</span><span class="district-tag">Rajasthan PTET</span><span class="district-tag">RSSB LDC</span>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--saffron-light); margin: 2.5rem 0 0.5rem;">💰 Scholarships for Rajasthan Students</h3>
+  <div class="divider"></div>
+  <table class="scholarship-table">
+    <thead><tr><th>Scholarship</th><th>Eligibility</th><th>Amount (Approx)</th><th>Portal</th></tr></thead>
+    <tbody>
+      <tr><td>Mukhyamantri Uchh Shiksha Scholarship</td><td>12th pass, family income &lt;2.5L, Rajasthan board</td><td>₹5,000/yr</td><td>hte.rajasthan.gov.in</td></tr>
+      <tr><td>Devnarayan Chhatra Scooty/Scholarship</td><td>Girls from special backward classes, 50%+ in 12th</td><td>Scooty / ₹10,000–20,000</td><td>hte.rajasthan.gov.in</td></tr>
+      <tr><td>SC/ST Pre-Matric Scholarship</td><td>Class 6–10, SC/ST students</td><td>₹700–1,000/month</td><td>scholarships.gov.in</td></tr>
+      <tr><td>Ambedkar Post-Matric Scholarship</td><td>SC students, post-matric level</td><td>Up to ₹10,000/yr</td><td>scholarships.gov.in</td></tr>
+      <tr><td>Kalibai Bheel Scooty Scheme</td><td>Girls from SC/ST/OBC/EWS, merit-based</td><td>Scooty or ₹40,000</td><td>hte.rajasthan.gov.in</td></tr>
+      <tr><td>NSP Central Scholarships</td><td>Various categories, all communities</td><td>Varies by category</td><td>scholarships.gov.in</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box">
+    <strong>⚡ ThunderStudy Tip</strong>
+    Preparing for RPSC RAS, REET, or any Rajasthan government exam? Visit our platforms — <a href="https://commercesehoga.github.io/dashboard" style="color:var(--turquoise-light); text-decoration:none;">CBT Mock Platform</a> for Commerce, and our <a href="https://wondermayank.github.io" style="color:var(--turquoise-light); text-decoration:none;">main hub</a> — for free study resources, mock tests, and career guidance tailored for Rajasthan students.
+  </div>
+</section>
+
+<!-- ═══ DID YOU KNOW ═══ -->
+<section id="facts" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">💡 Section 9</span>
+  <h2 class="section-title">Did You <span>Know?</span> — Rajasthan Edition</h2>
+  <div class="divider"></div>
+  <div class="facts-grid">
+    <div class="fact-card"><div class="fact-card-title">India's Largest State</div><div class="fact-card-text">Rajasthan covers 3,42,239 km² — nearly the size of Germany. It is larger than the UK, Italy, Japan, and Germany combined. It shares borders with 5 Indian states and international border with Pakistan.</div></div>
+    <div class="fact-card"><div class="fact-card-title">World's Oldest Mountain Range</div><div class="fact-card-text">The Aravalli Range is estimated to be 350 crore (3.5 billion) years old — one of the world's oldest fold mountain ranges. Guru Shikhar in Mount Abu at 1722m is the highest point.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Only Living Fort in the World</div><div class="fact-card-text">Jaisalmer Fort is one of the few "living forts" in the world — around 3,000 people still reside within its golden sandstone walls, along with hotels, shops, and Jain temples.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Kalbelia — UNESCO Dance</div><div class="fact-card-text">The Kalbelia folk song and dance of Rajasthan was inscribed on UNESCO's Intangible Cultural Heritage list in 2010. It is performed by women of the Kalbelia community, mimicking snake movements.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Churu — Hottest Place in India</div><div class="fact-card-text">Churu in northern Rajasthan regularly records the highest temperatures in India — reaching up to 50–51°C in summer. In winter, it can drop to –1°C, one of the greatest temperature ranges in India.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Jantar Mantar — UNESCO Observatory</div><div class="fact-card-text">Jaipur's Jantar Mantar (built 1724–1727 by Maharaja Jai Singh II) is a UNESCO World Heritage Site with 19 astronomical instruments. The Samrat Yantra is the world's largest stone sundial — accurate to 2 seconds.</div></div>
+    <div class="fact-card"><div class="fact-card-title">India's Pink City Has a Reason</div><div class="fact-card-text">Jaipur was painted pink in 1876 to welcome Prince Albert (husband of Queen Victoria). Pink represents hospitality in Rajput culture. By law, all buildings in the old city must remain pink-terracotta.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Bishnoi — The First Conservationists</div><div class="fact-card-text">In 1730, Amrita Devi Bishnoi and 363 villagers sacrificed their lives to protect Khejri trees from the Maharaja's soldiers — the world's first recorded environmental martyrdom. The Chipko movement drew inspiration from this.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Kalibangan — Oldest Ploughed Field</div><div class="fact-card-text">Kalibangan in Hanumangarh district contains the world's earliest recorded ploughed agricultural field, dating to 2800 BCE. It is also among the only Harappan sites with evidence of pre-Harappan occupation.</div></div>
+    <div class="fact-card"><div class="fact-card-title">BITS Pilani — MIT of Asia</div><div class="fact-card-text">BITS Pilani (Birla Institute of Technology and Science) in Jhunjhunu district is Asia's top private engineering university. Founded in 1964, it has produced some of India's greatest scientists and entrepreneurs.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Cumin Capital of the World</div><div class="fact-card-text">Rajasthan produces over 70% of India's cumin (jeera) and supplies 30% of global cumin exports. Jodhpur is the world's largest cumin trading market. Rajasthan's coriander and isabgol are also globally dominant.</div></div>
+    <div class="fact-card"><div class="fact-card-title">Rajasthan's Solar Power</div><div class="fact-card-text">Rajasthan is India's #1 state in installed solar power capacity — thanks to the Thar Desert's 325+ sunny days per year. Bhadla Solar Park (Jodhpur) is the world's largest solar park at 2,245 MW capacity.</div></div>
+  </div>
+</section>
+
+<!-- ═══ PLATFORMS ═══ -->
+<section id="platforms" style="border-top: 1px solid rgba(201,136,42,0.1);">
+  <span class="section-tag">🔗 ThunderStudy Network</span>
+  <h2 class="section-title">Our <span>Platforms</span></h2>
+  <div class="divider"></div>
+  <div class="platform-grid">
+    <a class="platform-card" href="https://wondermayank.github.io"><div class="platform-card-icon">🌐</div><div class="platform-card-name">Wondermayank Hub</div><div class="platform-card-url">wondermayank.github.io</div></a>
+    <a class="platform-card" href="https://commercesehoga.github.io/dashboard"><div class="platform-card-icon">📋</div><div class="platform-card-name">CBT Mock Platform</div><div class="platform-card-url">commercesehoga.github.io/dashboard</div></a>
+    <a class="platform-card" href="https://commercesehoga.github.io/help"><div class="platform-card-icon">💛</div><div class="platform-card-name">Donation / Support</div><div class="platform-card-url">commercesehoga.github.io/help</div></a>
+    <a class="platform-card" href="https://t.me/thunderstudy_official"><div class="platform-card-icon">📱</div><div class="platform-card-name">Telegram Channel</div><div class="platform-card-url">t.me/thunderstudy_official</div></a>
+    <a class="platform-card" href="https://youtube.com/@wondermayank"><div class="platform-card-icon">▶️</div><div class="platform-card-name">YouTube</div><div class="platform-card-url">youtube.com/@wondermayank</div></a>
+    <a class="platform-card" href="https://wondermayank.github.io/contact"><div class="platform-card-icon">📩</div><div class="platform-card-name">Contact Owner</div><div class="platform-card-url">wondermayank.github.io/contact</div></a>
+    <a class="platform-card" href="https://wondermayank.github.io/terms"><div class="platform-card-icon">📄</div><div class="platform-card-name">Terms & Conditions</div><div class="platform-card-url">wondermayank.github.io/terms</div></a>
+    <a class="platform-card" href="https://wondermayank.github.io/privacy"><div class="platform-card-icon">🔒</div><div class="platform-card-name">Privacy Policy</div><div class="platform-card-url">wondermayank.github.io/privacy</div></a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p style="font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--gold); margin-bottom:0.5rem;">पधारो म्हारे देश</p>
+  <p style="color:var(--text-muted); margin-bottom:1.5rem; font-style:italic;">Welcome to our land — Rajasthan's eternal invitation</p>
+  <p>© 2025 <strong>ThunderStudy by Wondermayank</strong>. All rights reserved.</p>
+  <p style="margin-top:0.5rem; color:var(--text-muted); font-size:0.85rem;">Made with ♥ for Rajasthan · <strong style="color:var(--saffron)">The Land of Kings</strong></p>
+</footer>
+
+<script>
+function showCity(id, el) {
+  document.querySelectorAll('.city-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('city-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
